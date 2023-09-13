@@ -20,23 +20,22 @@ const Educationalinfo =(props)=>{
                                 <div className="value basis-7/12 "><input name="fullname" className="rounded-xl border-2 border-slate-700 h-8  sm:h-full w-full float-right"/></div>
                             </div>
 
+                            <div className="DOB flex  justify-between sm:h-9 mt-3">
+                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Name of College :</label></div>
+                                <div className="value basis-7/12"><input name="fullname" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
+                            </div>
+
                             <div className="contact flex  justify-between sm:h-9 mt-3">
-                                <div className="title  basis-4/12"><label className="text-white font-bold text-md ">Passing Year:</label></div>
+                                <div className="title  basis-4/12"><label className="text-white font-bold text-md ">Passing Year :</label></div>
                                 <div className="value basis-7/12"><input name="fullname" type="number" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
                             </div>
 
-                            <div className="email flex  justify-between sm:h-9 mt-3">
+                            {/* <div className="email flex  justify-between sm:h-9 mt-3">
                                 <div className="title basis-4/12"><label className="text-white font-bold text-md">Certificate:</label></div>
                                 <div className="value  basis-7/12">
                                     <label  for="img" className="rounded-xl border-2 border-slate-700 h-8 w-1/2 float-right sm:h-full bg-sky-300 text-lg flex justify-center ">Upload</label>
                                     <input id="img" name="fullname" type="file" className="rounded-xl border-2 border-slate-700 h-8 w-full float-right hidden sm:h-full "/></div>
                             </div>
-
-                            <div className="DOB flex  justify-between sm:h-9 mt-3">
-                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Date of Birth:</label></div>
-                                <div className="value basis-7/12"><input name="fullname" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
-                            </div>
-
                             <div className="Language flex justify-between sm:h-9 mt-3 ">
                                 <div className="title basis-4/12"><label className="text-white font-bold text-md">Language Spoken:</label></div>
                                 <div className="value  basis-7/12 py-3 sm:py-0"><input name="fullname" className="rounded-x border-2 border-slate-700 h-8  w-full float-right sm:h-full"/></div>
@@ -55,7 +54,7 @@ const Educationalinfo =(props)=>{
                             <div className="address flex  justify-between sm:h-9 mt-3">
                                 <div className="title  basis-4/12"><label className="text-white font-bold text-md">Address:</label></div>
                                 <div className="value basis-7/12"><input name="fullname" className="rounded-sm border-2 border-slate-700 h-auto w-full float-right  sm:h-full overflow-auto"/></div>
-                            </div>
+                            </div> */}
                         
                         </div>
                     </div>
