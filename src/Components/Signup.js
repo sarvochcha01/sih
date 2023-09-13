@@ -24,17 +24,15 @@ const Signup = () => {
     };
 
     axios
-      .post(
-        `${api}/signup`,
-        userData
-      )
+      .post(`${api}/signup`, userData)
       .then((res) => {
         console.log(res.data);
-        const token = res.data.token;//Manish
-        const FBIdToken = `Bearer ${token}`;//Manish
-        localStorage.setItem('FBIdToken', FBIdToken);//Manish
-        axios.defaults.headers.common['Authorization'] = FBIdToken;//Manish
+        const token = res.data.token; //Manish
+        const FBIdToken = `Bearer ${token}`; //Manish
+        localStorage.setItem("FBIdToken", FBIdToken); //Manish
+        axios.defaults.headers.common["Authorization"] = FBIdToken; //Manish
         navigate("/");
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err.response.data);
@@ -45,13 +43,13 @@ const Signup = () => {
     <div className="h-full w-full bg-bluebg  rounded-b-3xl rounded-l-3xl shadow-2xl shadow-slate-900">
       <div className=" w-11/12 mx-auto pt-4 m-auto">
         <div className=" flex justify-center text-white ">
-          {/* <label for="user" className=" font-semibold my-auto text-lg mt-1">
+          {/* <label for="user" className="  my-auto text-lg mt-1">
             I am a{" "}
           </label>
           <select
             name="user"
             id="user"
-            className="text-black w-auto mx-2 text-base rounded-lg px-2 py-1 border-2 border-slate-500 bg-gray-300"
+            className="text-black w-auto mx-2 text-base rounded-sm outline-none hover:ring-1 hover:ring-white px-2 py-1  border-slate-500 bg-gray-300"
           >
             <option value="client">Client</option>
             <option value="lawyer">Lawyer</option>
@@ -65,60 +63,60 @@ const Signup = () => {
         <form>
           <div className="w-full mx-auto ">
             <div className=" mx-auto w-10/12 md:w-8/12 mt-8 ">
-              <label className="text-white font-semibold text-lg">
+              <label className="text-white text-lg">
                 Full Name
                 <br />
               </label>
               <input
                 type="text"
-                className="w-full h-8 rounded-lg bg-gray-300 p-2 border-2 mb-2 border-slate-500"
+                className="w-full h-8 rounded-sm outline-none hover:ring-1 hover:ring-white bg-gray-300 p-2 mb-2 border-slate-500"
                 onChange={(e) => {
                   setFullName(e.target.value);
                 }}
               />
               <br />
-              <label className="text-white font-semibold text-lg">
+              <label className="text-white text-lg">
                 Username
                 <br />
               </label>
               <input
                 type="text"
-                className="w-full h-8 bg-gray-300 p-2 rounded-lg border-2 mb-2 border-slate-500"
+                className="w-full h-8 bg-gray-300 p-2 rounded-sm outline-none hover:ring-1 hover:ring-white  mb-2 border-slate-500"
                 onChange={(e) => {
                   setHandle(e.target.value);
                 }}
               ></input>
-              <label className="text-white font-semibold text-lg">
+              <label className="text-white  text-lg">
                 Email
                 <br />
               </label>
               <input
                 type="text"
-                className="w-full h-8 rounded-lg bg-gray-300 p-2 border-2 mb-3 border-slate-500"
+                className="w-full h-8 rounded-sm outline-none hover:ring-1 hover:ring-white bg-gray-300 p-2  mb-3 border-slate-500"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
               <br />
-              <label className="text-white font-semibold text-lg">
+              <label className="text-white  text-lg">
                 Password
                 <br />
               </label>
               <input
                 type="password"
-                className="w-full h-8 rounded-lg bg-gray-300 p-2 border-2 mb-3 border-slate-500"
+                className="w-full h-8 rounded-sm outline-none hover:ring-1 hover:ring-white bg-gray-300 p-2  mb-3 border-slate-500"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
               />
               <br />
-              <label className="text-white font-semibold text-lg">
+              <label className="text-white  text-lg">
                 Confirm Password
                 <br />
               </label>
               <input
                 type="password"
-                className="w-full h-8 rounded-lg bg-gray-300 p-2 border-2 mb-3 border-slate-500"
+                className="w-full h-8 rounded-sm outline-none hover:ring-1 hover:ring-white bg-gray-300 p-2  mb-3 border-slate-500"
                 onChange={(e) => {
                   setConfirmPassword(e.target.value);
                 }}

@@ -3,38 +3,15 @@ import { Link } from "react-router-dom";
 
 import axios from 'axios';
 import authentication from '../Authentication/authentication';
-import api from '../Authentication/apiAddress';
-import { useEffect } from "react";
+import authentication from "../Authentication/authentication";
 
-console.log(authentication().authenticated)
-const handleSignOut = () =>{
-    const values = authentication();
-    if(values.authenticated){
-        axios
-          .post(
-            `${api}/signout`
-          )
-          .then((res) => {
-            axios.defaults.headers.common['Authorization'] = '';
-        
-            const FBIdToken = `Bearer `;//Manish
-            localStorage.setItem('FBIdToken', FBIdToken);//Manish
-            console.log(res.data)
-            window.location.reload()
-            
-          })
-          .catch((err) => {
-            console.log(err.response.data);
-          });
-    }
-    else{
-        console.error("Hahahah")
-    }
-}
+import { useEffect, useState } from "react";
+import ProfileDropdown from "./ProfileDropdown";
+import HandleSignOut from "./SignOut";
 
 const ClientHomeNavbar = () => {
-
-  
+  const [profileDropdownVisible, setProfileDropdownVisibility] =
+    useState(false);
 
   return (
     <div className="flex bg-navbar w-full h-16 z-50 fixed text-white justify-center">
@@ -68,18 +45,36 @@ const ClientHomeNavbar = () => {
             NAV1
           </div>
         </div>
+        {profileDropdownVisible && (
+          <ProfileDropdown
+            setProfileDropdownVisibility={setProfileDropdownVisibility}
+            profileDropdownVisible={profileDropdownVisible}
+          />
+        )}
         <div className="account w-1/4 h-full  flex justify-center items-center flex-row space-x-8">
-          <FaUser className="text-3xl md:hidden" />
-          {!authentication().authenticated && <Link to="/signin">
-            <div className="signup h-full  md:flex justify-center items-center hidden">
-              <span className="text-md px-4 py-2 border text-white text-black rounded-xl hover:cursor-pointer hover:-translate-y-0.5">
-                Sign In / Sign Up
-              </span>
-            </div>
-          </Link>}
-          {authentication().authenticated && <div className='border-2 hidden md:flex p-2 px-4 hover:cursor-pointer rounded-xl hover:-translate-y-0.5' 
-            onClick={() => handleSignOut()}
-            >Sign out</div>}
+          <FaUser
+            className="text-3xl md:hidden"
+            onClick={() =>
+              setProfileDropdownVisibility(!profileDropdownVisible)
+            }
+          />
+          {!authentication().authenticated && (
+            <Link to="/signin">
+              <div className="signup h-full  md:flex justify-center items-center hidden">
+                <span className="text-md px-4 py-2 border text-white hover:text-black hover:bg-white transition-all delay-75 rounded-xl hover:cursor-pointer hover:-translate-y-0.5">
+                  Sign In / Sign Up
+                </span>
+              </div>
+            </Link>
+          )}
+          {authentication().authenticated && (
+            <FaUser
+              className="text-3xl hidden md:flex"
+              onClick={() =>
+                setProfileDropdownVisibility(!profileDropdownVisible)
+              }
+            />
+          )}
         </div>
       </div>
     </div>
