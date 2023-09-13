@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+import api from "../Authentication/apiAddress";
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -16,12 +17,17 @@ const Signin = () => {
 
     axios
       .post(
-        "https://asia-south1-socialape-3f6b4.cloudfunctions.net/api/login",
+        `${api}/login`,
         userData
       )
       .then((res) => {
         console.log(res.data);
+        const token = res.data.token;//Manish
+        const FBIdToken = `Bearer ${token}`;//Manish
+        localStorage.setItem('FBIdToken', FBIdToken);//Manish
+        axios.defaults.headers.common['Authorization'] = FBIdToken;//Manish
         navigate("/");
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err.response.data);
