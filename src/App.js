@@ -18,6 +18,7 @@ import jwtDecode from "jwt-decode";
 
 import RegisterProvider from "./Components/RegisterProvider";
 import UserSelection from "./Components/UserSelection";
+import SelectUser from "./Components/SelectUser";
 function App() {
   return (
     <div className="flex flex-col w-full">
@@ -52,6 +53,7 @@ function App() {
         <Route path="/signup" element={<Signinup a={false} b={true} />} />
         <Route path="/register" element={<RegisterProvider/>} />
         <Route path="/UserSelection" element={<UserSelection/>} />
+        <Route path="/Select" element={<SelectUser/>} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
       <Footer />

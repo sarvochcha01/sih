@@ -16,62 +16,46 @@ const Professionalinfo =(props)=>{
                     <p className="text-2xl text-sky-300 font-serif my-2 text-center sm:text-left sm:ml-12">Professional Information</p>
                     <div className="details flex flex-col-reverse lg:flex-row h-4/5 sm:justify-evenly">
                         <div className="personal basis-8/12 sm:ml-20">
-                            
-
-                            <div className="contact flex  justify-between sm:h-9 mt-3 mb-2">
-                                <div className="title  basis-4/12"><label className="text-white font-bold text-md ">Year of Experience:</label></div>
-                                <div className="value basis-6/12"><input name="fullname" type="number" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
+                            <div className="name flex justify-between sm:h-9 mt-6">
+                                <div className="title  basis-4/12  "><label className="text-white font-bold text-md ">Profession:</label></div>
+                                <div className="value basis-7/12 "><input name="fullname" className="rounded-xl border-2 border-slate-700 h-8  sm:h-full w-full float-right"/></div>
                             </div>
 
-                            <div className="email flex  justify-between sm:h-9 mt-3 mb-2">
+                            <div className="contact flex  justify-between sm:h-9 mt-3">
+                                <div className="title  basis-4/12"><label className="text-white font-bold text-md ">Expeience(yrs):</label></div>
+                                <div className="value basis-7/12"><input name="fullname" type="number" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
+                            </div>
+
+                            <div className="email flex  justify-between sm:h-9 mt-3">
                                 <div className="title basis-4/12"><label className="text-white font-bold text-md">Law Firm(if any):</label></div>
-                                <div className="value  basis-6/12"><input name="fullname" type="email" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
+                                <div className="value  basis-7/12"><input name="fullname" type="email" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
                             </div>
 
-                            <div className="DOB flex  justify-between sm:h-9 mt-3 mb-2">
-                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Work Location:</label></div>
-                                <div className="value basis-6/12"><input name="fullname" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
+                            <div className="DOB flex  justify-between sm:h-9 mt-3">
+                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Date of Birth:</label></div>
+                                <div className="value basis-7/12"><input name="fullname" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
                             </div>
 
-                            <div className="Language flex justify-between sm:h-9 mt-3 mb-2">
-                                <div className="title basis-4/12"><label for="user" className="text-white font-bold text-md">Type of Lawyer : </label></div>
-                                
-                                <div className="value  basis-7/12 py-3 sm:py-0 mb-8"><select name="user" id="user" className="text-black w-auto ml-14 text-base rounded-lg px-2 py-1 border-2 border-slate-500 bg-gray-300">
-                                    <option value="client">Criminal Lawyer</option>
-                                    <option value="lawyer">Family Lawyers</option>
-                                    <option value="consultant">Corporate Lawyers</option>
-                                    <option value="lawfirm">Labor Lawyers</option>
-                                    <option value="notary">Tax Lawyer</option>
-                                    <option value="mediator">Public Interest Lawyer</option>
-                                    <option value="documentwriter">Intellectual Property Lawyer</option>
-                                    <option value="consultant">Immigration Lawyers</option>
-                                    <option value="client">Civil Rights Lawyer</option>
-                                    <option value="lawyer">Environmental Lawyer</option>
-                                    <option value="consultant">Entertainment Lawyer</option>
-                                    <option value="lawfirm">Estate Planning Lawyer</option>
-                                    <option value="notary">Civil Litigation Lawyers</option>
-                                    <option value="client">Constitutional Lawyers</option>
-                                    <option value="lawyer">Real Estate Lawyers</option>
-                                    <option value="consultant">Bankruptcy Lawyers</option>
-                                    <option value="lawfirm">Malpractice Lawyers</option>
-                                    <option value="notary">Personal injury lawyer</option>
-                                    <option value="notary">Property lawyer</option>
-                                    <option value="client">Divorce lawyer</option>
-                                    </select></div>
-                                    </div>
-                            <div className="ocupation flex  justify-between sm:h-9 mt-3 mb-4">
-                                <div className="title  basis-4/12">
-                                    <label className="text-white font-bold text-md">Bar Association Certificate :</label>
-                                </div>
-                                <div className="value  basis-6/12 h-8">
-                                    <input type="file" name="fullname" className="text-white rounded-sm border-2 border-slate-900 h-8  w-full float-right sm:h-full flex"/>
-                                </div>
-                                
+                            <div className="Language flex justify-between sm:h-9 mt-3 ">
+                                <div className="title basis-4/12"><label className="text-white font-bold text-md">Language Spoken:</label></div>
+                                <div className="value  basis-7/12 py-3 sm:py-0"><input name="fullname" className="rounded-x border-2 border-slate-700 h-8  w-full float-right sm:h-full"/></div>
                             </div>
-                            <div className="DOB flex flex-col justify-between sm:h-auto mt-3 mb-8">
-                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Bio<span className="text-sm font-light">(Description of your profile):</span><br/></label></div>
-                                <div className="value basis-11/12"><input type="text" name="fullname" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-24 cursor-auto"></input></div>
+
+                            <div className="ocupation flex  justify-between sm:h-9 mt-3">
+                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Occupation :</label></div>
+                                <div className="value  basis-7/12"><input name="fullname" className="rounded-sm border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
                             </div>
+
+                            <div className="Gender flex justify-between sm:h-9 mt-3">
+                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Gender:</label></div>
+                                <div className="value  basis-7/12"><input name="fullname" className="rounded-sm border-2 border-slate-700 h-8  w-full float-right sm:h-full "/></div>
+                            </div>
+
+                            <div className="address flex  justify-between sm:h-9 mt-3">
+                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Address:</label></div>
+                                <div className="value basis-7/12"><input name="fullname" className="rounded-sm border-2 border-slate-700 h-auto w-full float-right  sm:h-full overflow-auto"/></div>
+                            </div>
+                        
                         </div>
                     </div>
                     <div className="flex justify-center space-x-6  my-2">
