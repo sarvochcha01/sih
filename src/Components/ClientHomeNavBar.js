@@ -1,8 +1,6 @@
 import { FaBars, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import axios from 'axios';
-import authentication from '../Authentication/authentication';
 import authentication from "../Authentication/authentication";
 
 import { useEffect, useState } from "react";
