@@ -12,6 +12,9 @@ import ServiceProviderProfile from "./Pages/ServiceProviderProfile";
 import NotFound404 from "./Components/NotFound404";
 
 import Signinup from "./Components/Signinup";
+import jwtDecode from "jwt-decode";
+
+//checking for authorization
 
 function App() {
   return (
