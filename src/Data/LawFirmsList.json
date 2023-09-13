@@ -1,0 +1,27 @@
+[
+    {
+        "id": "l1",
+        "imgUrl": "https://shorturl.at/mpyJ5",
+        "name": "ABC",
+        "exp": 69,
+        "specialise" : "ABCDEFGHIJKL",
+        "fees": 69420
+    },
+    {
+        "id": "l2",
+        "imgUrl": "https://shorturl.at/mpyJ5",
+        "name": "DEF",
+        "exp": 420,
+        "specialise" : "MNOPQRSTUV",
+        "fees": 42069
+    },
+    {
+        "id": "l3",
+        "imgUrl": "https://shorturl.at/mpyJ5",
+        "name": "GHI",
+        "exp": 69,
+        "specialise" : "WXYZ",
+        "fees": 69420
+    }
+
+]

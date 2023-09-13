@@ -1,0 +1,27 @@
+[
+    {
+        "id": "a1",
+        "imgUrl": "https://shorturl.at/mpyJ5",
+        "name": "Adv. Manish Suresh",
+        "exp": 6.9,
+        "specialise" : "personal injury, corporate and family disputes",
+        "fees": 500
+    },
+    {
+        "id": "a2",
+        "imgUrl": "https://shorturl.at/mpyJ5",
+        "name": "Adv. Sanish Muresh",
+        "exp": 6.9,
+        "specialise" : "personal injury, corporate and family disputes",
+        "fees": 500
+    },
+    {
+        "id": "a3",
+        "imgUrl": "https://shorturl.at/mpyJ5",
+        "name": "Adv. Sunish Maresh",
+        "exp": 6.9,
+        "specialise" : "personal injury, corporate and family disputes",
+        "fees": 500
+    }
+
+]
