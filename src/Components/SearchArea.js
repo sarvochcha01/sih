@@ -60,7 +60,7 @@ const SearchArea = () => {
                 id="cityInput"
                 type="text"
                 className="w-full bg-slate-200 h-16 px-2 rounded-xl mt-2"
-                placeholder={city}
+                placeholder={`${city === "" ? "Fetching Location" : city} `}
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
               />

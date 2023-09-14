@@ -12,6 +12,7 @@ const Signin = () => {
   const [password, setPassword] = useState("");
 
   const [cursorLoading, setCursorLoading] = useState(false);
+  const [errorObject, setErrorObject] = useState({});
 
   const handleLogin = (e) => {
     const userData = {
@@ -33,12 +34,23 @@ const Signin = () => {
       })
       .catch((err) => {
         console.log(err.response.data);
+        setErrorObject(err.response.data);
         setCursorLoading(false);
       });
   };
 
   return (
-    <div className="h-full w-full flex flex-col justify-betwen bg-bluebg rounded-b-3xl rounded-r-3xl">
+    <div className="h-full w-full flex flex-col relative justify-betwen bg-bluebg rounded-b-3xl rounded-r-3xl">
+      {Object.keys(errorObject).length === 0 ? (
+        <div></div>
+      ) : (
+        <div className="error bg-red-600 text-white rounded-sm w-60 flex absolute mb-8 top-0 z-50 left-0 mx-auto right-0 justify-center text-center">
+          {"email" in errorObject && `Email ${errorObject.email}\n`}
+          {"password" in errorObject && `Password ${errorObject.password}`}
+          {"general" in errorObject && `${errorObject.general}`}
+          {"error" in errorObject && `Email or Password doesn't match`}
+        </div>
+      )}
       <div className="mt-12 text-3xl justify-center flex font-bold text-white">
         <p>Welcome Back!</p>
       </div>
@@ -86,6 +98,9 @@ const Signin = () => {
               onClick={() => {
                 handleLogin();
                 setCursorLoading(true);
+                setTimeout(() => {
+                  setErrorObject({});
+                }, 2000);
               }}
             />
           </div>

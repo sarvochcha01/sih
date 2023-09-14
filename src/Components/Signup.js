@@ -9,6 +9,7 @@ const Signup = () => {
   useEffect(() => {}, []);
 
   const [cursorLoading, setCursorLoading] = useState(false);
+  const [errorObject, setErrorObject] = useState({});
 
   const [fullName, setFullName] = useState("");
   const [handle, setHandle] = useState("");
@@ -39,12 +40,24 @@ const Signup = () => {
       })
       .catch((err) => {
         setCursorLoading(false);
+        setErrorObject(err.response.data);
         console.log(err.response.data);
       });
   };
 
   return (
-    <div className="h-full w-full bg-bluebg  rounded-b-3xl rounded-l-3xl">
+    <div className="h-full w-full bg-bluebg  rounded-b-3xl relative rounded-l-3xl">
+      {Object.keys(errorObject).length === 0 ? (
+        <div></div>
+      ) : (
+        <div className="error bg-red-600 text-white rounded-sm w-80 flex absolute mb-8 top-0 z-50 left-0 mx-auto right-0 justify-center text-center">
+          {"fullname" in errorObject && `Full name ${errorObject.fullname}\n`}
+          {"handle" in errorObject && `Username ${errorObject.handle}\n`}
+          {"email" in errorObject && `Email ${errorObject.email}\n`}
+          {"password" in errorObject && `Password ${errorObject.password}\n`}
+          {"confirmPassword" in errorObject && `${errorObject.confirmPassword}`}
+        </div>
+      )}
       <div className=" w-11/12 mx-auto pt-4 m-auto">
         <div className=" flex justify-center text-white ">
           {/* <label for="user" className="  my-auto text-lg mt-1">
@@ -138,6 +151,9 @@ const Signup = () => {
               onClick={() => {
                 handleSubmit();
                 setCursorLoading(true);
+                setTimeout(() => {
+                  setErrorObject({});
+                }, 2000);
               }}
             />
           </div>

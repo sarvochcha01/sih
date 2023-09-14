@@ -52,10 +52,10 @@ function App() {
         />
         <Route path="/signin" element={<Signinup a={true} b={false} />} />
         <Route path="/signup" element={<Signinup a={false} b={true} />} />
-        <Route path="/providerRegister" element={<RegisterProvider/>} />
-        <Route path="/UserSelection" element={<UserSelection/>} />
-        <Route path="/clientRegister" element={<Registerclient/>} />
-        <Route path="/Select" element={<SelectUser/>} />
+        <Route path="/providerRegister" element={<RegisterProvider />} />
+        <Route path="/UserSelection" element={<UserSelection />} />
+        <Route path="/clientRegister" element={<Registerclient />} />
+        <Route path="/Select" element={<SelectUser />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
       <Footer />
