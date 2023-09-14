@@ -1,8 +1,48 @@
 import { useState } from "react";
 import Professionalinfo from "./Profesionalinfo";
+import { Link } from "react-router-dom";
 const Personalinfo =(props)=>{
 
+    const [fullName, setFullName] = useState();
+    const [contact, setContact] = useState();
+    const [email, setEmail] = useState();
+    const [dob, setDob] = useState();
+    const [languages, setLanguages] = useState();
+    const [gender, setGender] = useState();
+    const [address, setAddress] = useState();
+
+    const handleFullName = (e) => {
+        setFullName(e.target.value)
+        localStorage.setItem("providerFullName", e.target.value)
+        
+    }
+    const handleContact = (e) => {
+        setContact(e.target.value)
+        localStorage.setItem("providerContact", e.target.value)
+    }
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+        localStorage.setItem("providerEmail", e.target.value)
+    }
+    const handleDob = (e) => {
+        setDob(e.target.value)
+        localStorage.setItem("providerDob", e.target.value)
+    }
+    const handleLanguages = (e) => {
+        setLanguages(e.target.value)
+        localStorage.setItem("providerLanguages", e.target.value)
+    }
+    const handleGender = (e) => {
+        setGender(e.target.value)
+        localStorage.setItem("providerGender", e.target.value)
+    }
+    const handleAddress = (e) => {
+        setAddress(e.target.value)
+        localStorage.setItem("providerAddress", e.target.value)
+    }
+
     return( 
+
         <div>
            <div>
                 <div>
@@ -21,42 +61,65 @@ const Personalinfo =(props)=>{
                         <div className="personal basis-8/12 sm:ml-20">
                             <div className="name flex justify-between sm:h-9 mt-6">
                                 <div className="title  basis-4/12  "><label className="text-white font-bold text-md ">Full Name:</label></div>
-                                <div className="value basis-7/12 "><input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  sm:h-full w-9/12 float-right"/></div>
+                                <div className="value basis-7/12 ">
+                                <input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  sm:h-full w-9/12 float-right"
+                                onChange={(e) => handleFullName(e)}
+                                value={localStorage.getItem("providerFullName")}
+                                /></div>
                             </div>
 
                             <div className="contact flex  justify-between sm:h-9 mt-3">
                                 <div className="title  basis-4/12"><label className="text-white font-bold text-md ">Contact no:</label></div>
-                                <div className="value basis-7/12"><input name="fullname" type="number" className="px-2  rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "/></div>
+                                <div className="value basis-7/12">
+                                <input name="fullname" type="number" className="px-2  rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "
+                                onChange={(e) => handleContact(e)}
+                                value={localStorage.getItem("providerContact")}
+                                /></div>
                             </div>
 
                             <div className="email flex  justify-between sm:h-9 mt-3">
                                 <div className="title basis-4/12"><label className="text-white font-bold text-md">Email ID:</label></div>
-                                <div className="value  basis-7/12"><input name="fullname" type="email" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "/></div>
+                                <div className="value  basis-7/12">
+                                <input name="fullname" type="email" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "
+                                onChange={(e) => handleEmail(e)}
+                                value={localStorage.getItem("providerEmail")}
+                                /></div>
                             </div>
 
                             <div className="DOB flex  justify-between sm:h-9 mt-3">
                                 <div className="title  basis-4/12"><label className="text-white font-bold text-md">Date of Birth:</label></div>
-                                <div className="value basis-7/12"><input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "/></div>
+                                <div className="value basis-7/12">
+                                <input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "
+                                onChange={(e) => handleDob(e)}
+                                value={localStorage.getItem("providerDob")}
+                                /></div>
                             </div>
 
                             <div className="Language flex justify-between sm:h-9 mt-3 ">
                                 <div className="title basis-4/12"><label className="text-white font-bold text-md">Language Spoken:</label></div>
-                                <div className="value  basis-7/12 py-3 sm:py-0"><input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full"/></div>
-                            </div>
-
-                            <div className="ocupation flex  justify-between sm:h-9 mt-3">
-                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Occupation :</label></div>
-                                <div className="value  basis-7/12"><input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "/></div>
+                                <div className="value  basis-7/12 py-3 sm:py-0">
+                                <input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full"
+                                onChange={(e) => handleLanguages(e)}
+                                value={localStorage.getItem("providerLanguages")}
+                                /></div>
                             </div>
 
                             <div className="Gender flex justify-between sm:h-9 mt-3">
                                 <div className="title  basis-4/12"><label className="text-white font-bold text-md">Gender:</label></div>
-                                <div className="value  basis-7/12"><input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "/></div>
+                                <div className="value  basis-7/12">
+                                <input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "
+                                onChange={(e) => handleGender(e)}
+                                value={localStorage.getItem("providerGender")}
+                                /></div>
                             </div>
 
                             <div className="address flex  justify-between sm:h-9 mt-3">
                                 <div className="title  basis-4/12"><label className="text-white font-bold text-md">Address:</label></div>
-                                <div className="value basis-7/12"><input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-auto w-9/12 float-right  sm:h-full overflow-auto"/></div>
+                                <div className="value basis-7/12">
+                                <input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-auto w-9/12 float-right  sm:h-full overflow-auto"
+                                onChange={(e) => handleAddress(e)}
+                                value={localStorage.getItem("providerAddress")}
+                                /></div>
                             </div>
                         
                         </div>
@@ -70,7 +133,8 @@ const Personalinfo =(props)=>{
                         </div>
                     </div>
                     <div className="flex justify-center space-x-6 mt-6 mb-2">
-                <input type="reset" value="Reset" className="bg-gray-300 border-2 border-slate-400 w-5/12 md:w-3/12 h-10 text-xl font-extrabold rounded-lg"/>
+                <Link to = "/userselection"><input type="button" value="Back" className="bg-gray-300 border-2 border-slate-400 w-5/12 md:w-3/12 h-10 text-xl font-extrabold rounded-lg"
+                /></Link>
                 <input type="submit" onClick={() => props.nfun()} value="Next" className="bg-sky-300 border-2 border-slate-400 w-5/12 h-10 text-xl font-extrabold md:w-3/12 rounded-lg" />
                 </div>
                 </form>

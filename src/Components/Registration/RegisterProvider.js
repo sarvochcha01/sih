@@ -1,9 +1,9 @@
-import Educationalinfo from "./Educationalinfo";
-import Personalinfo from "./Personalinfo";
-import Professionalinfo from "./Profesionalinfo";
+import Educationalinfo from "./Provider/Educationalinfo";
+import Personalinfo from "./Provider/Personalinfo";
+import Professionalinfo from "./Provider/Profesionalinfo";
 
 import { useState } from "react";
-import RegistrationSuccess from "./RegisterationSuccess";
+import RegistrationSuccess from "../RegisterationSuccess";
 
 const RegisterProvider =()=>{
     const [state, changeState] = useState(1);
