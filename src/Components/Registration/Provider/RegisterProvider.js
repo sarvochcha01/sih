@@ -1,9 +1,10 @@
-import Educationalinfo from "./Provider/Educationalinfo";
-import Personalinfo from "./Provider/Personalinfo";
-import Professionalinfo from "./Provider/Profesionalinfo";
+import Educationalinfo from "./Educationalinfo";
+import Personalinfo from "./Personalinfo";
+import Professionalinfo from "./Profesionalinfo";
 
 import { useState } from "react";
-import RegistrationSuccess from "../RegisterationSuccess";
+import RegistrationSuccess from "./RegisterationSuccess";
+import ProviderDocUpload from "./ProviderDocUpload";
 
 const RegisterProvider =()=>{
     const [state, changeState] = useState(1);
@@ -23,7 +24,8 @@ const RegisterProvider =()=>{
             {state === 1 && <Personalinfo nfun={nextState} pfun={prevState}/>}
             {state === 2 && <Professionalinfo nfun={nextState} pfun={prevState}/>}
             {state === 3 && <Educationalinfo nfun={nextState} pfun={prevState}/>}
-            {state === 4 && <RegistrationSuccess nfun={nextState} pfun={prevState}/>} 
+            {state === 4 && <ProviderDocUpload nfun={nextState} pfun={prevState}/>}
+            {state === 5 && <RegistrationSuccess nfun={nextState} pfun={prevState}/>} 
         </div>
     );
 }

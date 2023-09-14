@@ -16,7 +16,7 @@ import jwtDecode from "jwt-decode";
 
 //checking for authorization
 
-import RegisterProvider from "./Components/Registration/RegisterProvider";
+import RegisterProvider from "./Components/Registration/Provider/RegisterProvider";
 import UserSelection from "./Components/UserSelection";
 import SelectUser from "./Components/SelectUser";
 import Registerclient from "./Components/Registration/Client/Registerclient";
@@ -53,12 +53,16 @@ function App() {
         <Route path="/signin" element={<Signinup a={true} b={false} />} />
         <Route path="/signup" element={<Signinup a={false} b={true} />} />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <Route path="/providerRegister" element={<RegisterProvider />} />
         <Route path="/UserSelection" element={<UserSelection />} />
         <Route path="/clientRegister" element={<Registerclient />} />
         <Route path="/Select" element={<SelectUser />} />
 =======
         <Route path="/providerRegister" element={<RegisterProvider/>} />
+=======
+        <Route path="/providerRegister" element={<RegisterProvider/>} />  
+>>>>>>> Stashed changes
         <Route path="/UserSelection" element={<UserSelection/>} />
         <Route path="/clientRegister" element={<Registerclient/>} />
         <Route path="/Select" element={<SelectUser/>} />
