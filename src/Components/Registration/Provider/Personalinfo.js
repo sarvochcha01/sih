@@ -47,11 +47,13 @@ const Personalinfo =(props)=>{
            <div>
                 <div>
                     <div className="h-10 w-full flex justify-center mt-2 px-8 md:px-96">
-                        <div className="h-auto w-12 md:w-10 rounded-full border-4 border-green-800 flex items-center bg-gray-300 justify-center">1</div>
+                        <div className="h-auto w-12 md:w-14 rounded-full border-4 border-green-800 flex items-center bg-gray-300 justify-center">1</div>
                         <div className="line w-2/5 bg-gray-500 h-0.5 my-5"></div>
-                        <div className="h-auto w-12 md:w-10 rounded-full flex items-center bg-gray-300 justify-center">2</div>
+                        <div className="h-auto w-12 md:w-14 rounded-full flex items-center bg-gray-300 justify-center">2</div>
                         <div className="line w-2/5 bg-gray-500 h-0.5 my-5"></div>
-                        <div className="h-10 w-12 md:w-10 rounded-full flex items-center bg-gray-300 justify-center">3</div>
+                        <div className="h-10 w-12 md:w-14 rounded-full flex items-center bg-gray-300 justify-center">3</div>
+                        <div className="line w-2/5 bg-gray-500 h-0.5 my-5"></div>
+                        <div className="h-10 w-12 md:w-14 rounded-full flex items-center bg-gray-300 justify-center">4</div>
                     </div>
                 </div>
             <div className="container h-auto w-11/12 md:w-8/12 mx-auto mt-2 rounded-md bg-bluebg shadow-xl shadow-slate-400 p-2">
@@ -89,7 +91,7 @@ const Personalinfo =(props)=>{
                             <div className="DOB flex  justify-between sm:h-9 mt-3">
                                 <div className="title  basis-4/12"><label className="text-white font-bold text-md">Date of Birth:</label></div>
                                 <div className="value basis-7/12">
-                                <input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "
+                                <input type="date"name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "
                                 onChange={(e) => handleDob(e)}
                                 value={localStorage.getItem("providerDob")}
                                 /></div>
@@ -107,10 +109,15 @@ const Personalinfo =(props)=>{
                             <div className="Gender flex justify-between sm:h-9 mt-3">
                                 <div className="title  basis-4/12"><label className="text-white font-bold text-md">Gender:</label></div>
                                 <div className="value  basis-7/12">
-                                <input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "
+                                <select name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-9/12 float-right sm:h-full "
                                 onChange={(e) => handleGender(e)}
                                 value={localStorage.getItem("providerGender")}
-                                /></div>
+                                >
+                                <option value="Gender">Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option> 
+                                <option value="Others">Others</option>   
+                                </select></div>
                             </div>
 
                             <div className="address flex  justify-between sm:h-9 mt-3">
@@ -133,9 +140,9 @@ const Personalinfo =(props)=>{
                         </div>
                     </div>
                     <div className="flex justify-center space-x-6 mt-6 mb-2">
-                <Link to = "/userselection"><input type="button" value="Back" className="bg-gray-300 border-2 border-slate-400 w-5/12 md:w-3/12 h-10 text-xl font-extrabold rounded-lg"
+                <Link to = "/userselection"><input type="button" value="Back" className="bg-gray-300 border-2 border-slate-400 w-5/12 md:w-24 h-10 text-xl font-extrabold rounded-lg md:mr-20"
                 /></Link>
-                <input type="submit" onClick={() => props.nfun()} value="Next" className="bg-sky-300 border-2 border-slate-400 w-5/12 h-10 text-xl font-extrabold md:w-3/12 rounded-lg" />
+                <input type="submit" onClick={() => props.nfun()} value="Next" className="bg-sky-300 border-2 border-slate-400 w-5/12 h-10 text-xl font-extrabold md:w-24 rounded-lg md::ml-20" />
                 </div>
                 </form>
              </div>   
