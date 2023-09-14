@@ -1,5 +1,50 @@
+import { useNavigate } from "react-router-dom";
+import authentication from "../Authentication/authentication";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import api from "../Authentication/apiAddress";
+
 const ClientProfileView = () => {
+  const navigate = useNavigate()
+  const values = authentication();
+  
+  useEffect( () =>{
+    if(values.authenticated) console.log("Allowed")
+    else navigate("/not-found")
+  }, [])
+
+  const [fullName, setFullName] = useState();
+  const [contact, setContact] = useState();
+  const [email, setEmail] = useState();
+  const [dob, setDob] = useState();
+  const [languages, setLanguages] = useState();
+  const [gender, setGender] = useState();
+  const [address, setAddress] = useState();
+
+  const setFetchedData = (data) => {
+      setFullName(data.clientFullName)
+      setContact(data.clientContact)
+      setEmail(data.clientEmail)
+      setDob(data.clientDob)
+      setLanguages(data.clientLanguages)
+      setGender(data.clientGender)
+      setAddress(data.clientAddress)
+  }
+  //Fetch Data;
+  if(values.authenticated){
+    axios.post(`${api}/user/fetchProfileData`, {"UID": values.decodedToken.user_id})
+  .then(data => {
+    setFetchedData(data.data.data.clientPersonalInfo)
+    console.log(data.data.data.clientPersonalInfo)
+
+  })
+  .catch(err => {
+    console.log("sadge")
+  })
+  }
+
   return (
+    
     <div className="">
       <div className="w-full mt-14 h-96 justify-center absolute -z-50 bg-cover">
         <img
@@ -18,10 +63,10 @@ const ClientProfileView = () => {
             />
           </div>
           <div className="name mx-auto text-xl lg:text-lg font-bold text-center">
-            Divyansh Yaduvanshi
+            {fullName}
           </div>
           <div className="username mx-auto mt-2 text-lg lg:text-sm font-bold text-lsp">
-            @divy05
+          @DEKHTE HAI SHD DO
           </div>
           <div className="btn flex flex-row lg:flex-col mt-6 lg:mt-10 w-60 lg:w-full lg:space-y-4 mx-auto">
             <div className="edit-profile mx-auto bg-edit-profile text-white px-4 lg:px-8 py-2 rounded-xl hover:cursor-pointer">
@@ -38,7 +83,7 @@ const ClientProfileView = () => {
               Full name:
             </div>
             <div className="text text-lg font-semibold text-gray-500 pl-4 lg:pt-8 lg:w-2/4">
-              Divyansh Yaduvanshi
+            {fullName}
             </div>
           </div>
           <div className="username flex flex-col lg:flex-row lg:justify-between lg:px-8 w-full">
@@ -46,7 +91,7 @@ const ClientProfileView = () => {
               Username:
             </div>
             <div className="text text-lg font-semibold text-gray-500 pl-4 lg:pt-8 lg:w-2/4">
-              @divy05
+              @DEKHTE HAI SHD DO
             </div>
           </div>
           <div className="contact-no flex flex-col lg:flex-row lg:justify-between lg:px-8 w-full">
@@ -54,7 +99,7 @@ const ClientProfileView = () => {
               Contact number:
             </div>
             <div className="text text-lg font-semibold text-gray-500 pl-4 lg:pt-8 lg:w-2/4">
-              +91-8852xxxx99
+            {contact}
             </div>
           </div>
           <div className="email flex flex-col lg:flex-row lg:justify-between lg:px-8 w-full">
@@ -62,7 +107,7 @@ const ClientProfileView = () => {
               E-mail id:
             </div>
             <div className="text text-lg font-semibold text-gray-500 pl-4 lg:pt-8 lg:w-2/4">
-              divyanshy@gmail.com
+            {email}
             </div>
           </div>
           <div className="dob flex flex-col lg:flex-row lg:justify-between lg:px-8 w-full">
@@ -70,7 +115,7 @@ const ClientProfileView = () => {
               Date of birth:
             </div>
             <div className="text text-lg font-semibold text-gray-500 pl-4 lg:pt-8 lg:w-2/4">
-              25 May 2004
+            {dob}
             </div>
           </div>
           <div className="language flex flex-col lg:flex-row lg:justify-between lg:px-8 w-full">
@@ -78,23 +123,16 @@ const ClientProfileView = () => {
               Languages spoken:
             </div>
             <div className="text text-lg font-semibold text-gray-500 pl-4 lg:pt-8 lg:w-2/4">
-              English, Hindi
+            {languages}
             </div>
           </div>
-          <div className="occupation flex flex-col lg:flex-row lg:justify-between lg:px-8 w-full">
-            <div className="label-text text-xl font-bold pl-4 pt-4 lg:pt-8 lg:w-2/4 ">
-              Occupation:
-            </div>
-            <div className="text text-lg font-semibold text-gray-500 pl-4 lg:pt-8 lg:w-2/4">
-              Student
-            </div>
-          </div>
+          
           <div className="address flex flex-col lg:flex-row lg:justify-between lg:px-8 w-full">
             <div className="label-text text-xl font-bold pl-4 pt-4 lg:pt-8 lg:w-2/4 ">
               Address:
             </div>
             <div className="text text-lg font-semibold text-gray-500 pl-4 lg:pt-8 lg:w-2/4">
-              B33, SK Resisdency, Manglam City, Jaipur
+            {address}
             </div>
           </div>
         </div>

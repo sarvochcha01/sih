@@ -1,31 +1,15 @@
 import axios from "axios";
 import authentication from "../Authentication/authentication";
 import api from "../Authentication/apiAddress";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import HandleSignOut from "./SignOut";
 
-const handleSignOut = () => {
-  const values = authentication();
-  if (values.authenticated) {
-    axios
-      .post(`${api}/signout`)
-      .then((res) => {
-        axios.defaults.headers.common["Authorization"] = "";
-
-        const FBIdToken = `Bearer `; //Manish
-        localStorage.setItem("FBIdToken", FBIdToken); //Manish
-        console.log(res.data);
-        window.location.reload();
-      })
-      .catch((err) => {
-        console.log(err.response.data);
-      });
-  } else {
-    console.error("Hahahah");
-  }
-};
 
 const ProfileDropdown = (props) => {
+  const navigate = useNavigate();
   const values = authentication();
+//values.decodedToken.user_id
+
   return (
     <div
       className={`${
@@ -50,13 +34,18 @@ const ProfileDropdown = (props) => {
       )}
       {values.authenticated && (
         <>
-          <div className="profile hover:bg-navbar hover:text-white hover:cursor-pointer w-4/5 h-12 flex justify-center items-center border border-navbar font-semibold rounded-xl">
+          <Link to = "/profile" className="profile hover:bg-navbar hover:text-white hover:cursor-pointer w-4/5 h-12 flex justify-center items-center border border-navbar font-semibold rounded-xl">
+            <div onClick={() => {
+              props.setProfileDropdownVisibility(false)
+            }}>
             Profile
-          </div>
+          </div></Link>
           <div
             className="hover:bg-navbar hover:text-white hover:cursor-pointer w-4/5 h-12 flex justify-center items-center border border-navbar font-semibold rounded-xl mt-4"
             onClick={() => {
-              handleSignOut();
+              HandleSignOut();
+              navigate("/")
+              props.setProfileDropdownVisibility(false);
             }}
           >
             Sign Out
