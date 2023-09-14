@@ -40,7 +40,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="h-full w-full bg-bluebg  rounded-b-3xl rounded-l-3xl shadow-2xl shadow-slate-900">
+    <div className="h-full w-full bg-bluebg  rounded-b-3xl rounded-l-3xl">
       <div className=" w-11/12 mx-auto pt-4 m-auto">
         <div className=" flex justify-center text-white ">
           {/* <label for="user" className="  my-auto text-lg mt-1">
@@ -49,7 +49,7 @@ const Signup = () => {
           <select
             name="user"
             id="user"
-            className="text-black w-auto mx-2 text-base rounded-sm outline-none hover:ring-1 hover:ring-white px-2 py-1  border-slate-500 bg-gray-300"
+            className="text-black w-auto mx-2 text-base rounded-sm outline-none hover:ring-1 focus:ring-2 focus:ring-white  hover:ring-white px-2 py-1   bg-slate-200"
           >
             <option value="client">Client</option>
             <option value="lawyer">Lawyer</option>
@@ -69,7 +69,7 @@ const Signup = () => {
               </label>
               <input
                 type="text"
-                className="w-full h-8 rounded-sm outline-none hover:ring-1 hover:ring-white bg-gray-300 p-2 mb-2 border-slate-500"
+                className="w-full h-8 rounded-sm outline-none hover:ring-1 focus:ring-2 focus:ring-white hover:ring-white bg-slate-200 p-2 mb-2 "
                 onChange={(e) => {
                   setFullName(e.target.value);
                 }}
@@ -81,7 +81,7 @@ const Signup = () => {
               </label>
               <input
                 type="text"
-                className="w-full h-8 bg-gray-300 p-2 rounded-sm outline-none hover:ring-1 hover:ring-white  mb-2 border-slate-500"
+                className="w-full h-8 bg-slate-200 p-2 rounded-sm outline-none hover:ring-1 focus:ring-2 focus:ring-white  hover:ring-white  mb-2 "
                 onChange={(e) => {
                   setHandle(e.target.value);
                 }}
@@ -92,7 +92,7 @@ const Signup = () => {
               </label>
               <input
                 type="text"
-                className="w-full h-8 rounded-sm outline-none hover:ring-1 hover:ring-white bg-gray-300 p-2  mb-3 border-slate-500"
+                className="w-full h-8 rounded-sm outline-none hover:ring-1 focus:ring-2 focus:ring-white  hover:ring-white bg-slate-200 p-2  mb-3 "
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
@@ -104,7 +104,7 @@ const Signup = () => {
               </label>
               <input
                 type="password"
-                className="w-full h-8 rounded-sm outline-none hover:ring-1 hover:ring-white bg-gray-300 p-2  mb-3 border-slate-500"
+                className="w-full h-8 rounded-sm outline-none hover:ring-1 focus:ring-2 focus:ring-white  hover:ring-white bg-slate-200 p-2  mb-3 "
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
@@ -116,7 +116,7 @@ const Signup = () => {
               </label>
               <input
                 type="password"
-                className="w-full h-8 rounded-sm outline-none hover:ring-1 hover:ring-white bg-gray-300 p-2  mb-3 border-slate-500"
+                className="w-full h-8 rounded-sm outline-none hover:ring-1 focus:ring-2 focus:ring-white  hover:ring-white bg-slate-200 p-2  mb-3 "
                 onChange={(e) => {
                   setConfirmPassword(e.target.value);
                 }}

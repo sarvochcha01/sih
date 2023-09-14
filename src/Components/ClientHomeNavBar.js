@@ -43,19 +43,19 @@ const ClientHomeNavbar = () => {
             NAV1
           </div>
         </div>
-        {profileDropdownVisible && (
-          <ProfileDropdown
-            setProfileDropdownVisibility={setProfileDropdownVisibility}
-            profileDropdownVisible={profileDropdownVisible}
-          />
-        )}
-        <div className="account w-1/4 h-full  flex justify-center items-center flex-row space-x-8">
+        <div className="account w-1/4 relative h-full  flex justify-center items-center flex-col space-x-8">
           <FaUser
             className="text-3xl md:hidden"
             onClick={() =>
               setProfileDropdownVisibility(!profileDropdownVisible)
             }
           />
+          {profileDropdownVisible && (
+            <ProfileDropdown
+              setProfileDropdownVisibility={setProfileDropdownVisibility}
+              profileDropdownVisible={profileDropdownVisible}
+            />
+          )}
           {!authentication().authenticated && (
             <Link to="/signin">
               <div className="signup h-full  md:flex justify-center items-center hidden">

@@ -1,4 +1,28 @@
+import { useEffect, useRef, useState } from "react";
+import GetUserLocation from "./GetUserLocation";
+import axios from "axios";
+
 const SearchArea = () => {
+  const [city, setCity] = useState("");
+
+  useEffect(() => {
+    const success = (pos) => {
+      const lat = pos.coords.latitude;
+      const lon = pos.coords.longitude;
+      let finalEndPoint = `https://geocode.maps.co/reverse?lat=${lat}&lon=${lon}`;
+      axios.get(finalEndPoint).then((res) => {
+        setCity(res.data.address.city);
+        console.log(res.data);
+      });
+    };
+
+    const err = () => {
+      console.log("Unable to retrieve location");
+    };
+
+    navigator.geolocation.getCurrentPosition(success, err);
+  }, []);
+
   return (
     <div className="flex flex-col w-full max-w-screen-3xl mt-16 self-center  text-white items-center">
       <div className="flex w-full  lg:w-4/5 justify-center px-3 py-4 mt-8">
@@ -36,7 +60,9 @@ const SearchArea = () => {
                 id="cityInput"
                 type="text"
                 className="w-full bg-slate-200 h-16 px-2 rounded-xl mt-2"
-                placeholder="City"
+                placeholder={city}
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
               />
             </div>
           </div>

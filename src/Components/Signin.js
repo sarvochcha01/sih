@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import { useNavigate } from "react-router-dom";
 import api from "../Authentication/apiAddress";
 
@@ -16,16 +18,13 @@ const Signin = () => {
     };
 
     axios
-      .post(
-        `${api}/login`,
-        userData
-      )
+      .post(`${api}/login`, userData)
       .then((res) => {
         console.log(res.data);
-        const token = res.data.token;//Manish
-        const FBIdToken = `Bearer ${token}`;//Manish
-        localStorage.setItem('FBIdToken', FBIdToken);//Manish
-        axios.defaults.headers.common['Authorization'] = FBIdToken;//Manish
+        const token = res.data.token; //Manish
+        const FBIdToken = `Bearer ${token}`; //Manish
+        localStorage.setItem("FBIdToken", FBIdToken); //Manish
+        axios.defaults.headers.common["Authorization"] = FBIdToken; //Manish
         navigate("/");
         window.location.reload();
       })
@@ -35,7 +34,7 @@ const Signin = () => {
   };
 
   return (
-    <div className="h-full w-full flex flex-col justify-betwen bg-bluebg rounded-b-3xl rounded-r-3xl shadow-2xl shadow-slate-900">
+    <div className="h-full w-full flex flex-col justify-betwen bg-bluebg rounded-b-3xl rounded-r-3xl">
       <div className="mt-12 text-3xl justify-center flex font-bold text-white">
         <p>Welcome Back!</p>
       </div>
@@ -44,12 +43,12 @@ const Signin = () => {
           <div className="w-full mx-auto ">
             <div className=" mx-auto w-10/12 md:w-8/12 mt-10 ">
               <label className="text-white font-semibold text-lg">
-                Email or Username
+                Email
                 <br />
               </label>
               <input
                 type="text"
-                className="w-full h-10 rounded-lg bg-gray-300 p-2 border-2 mt-1 mb-3 border-slate-500"
+                className="w-full h-8 rounded-sm outline-none hover:ring-1 focus:ring-2 focus:ring-white  hover:ring-white bg-slate-200 p-2 mb-2 border-slate-500"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
@@ -61,23 +60,23 @@ const Signin = () => {
               </label>
               <input
                 type="password"
-                className="w-full h-10 bg-gray-300 p-2 rounded-lg border-2 mt-1 border-slate-500"
+                className="w-full h-8 rounded-sm outline-none hover:ring-1 focus:ring-2 focus:ring-white  hover:ring-white bg-slate-200 p-2 mb-2 border-slate-500"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
               ></input>
-              <a href="login">
+              <Link to="/forgot-password">
                 <p className="text-sm ml-2 mt-1 text-skyblue">
                   Forgot Password?
                 </p>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex justify-center mt-12 h-10">
             <input
               type="button"
               value="Sign In"
-              className="bg-white text-sky-600 text-xl font-bold w-3/12 rounded-md pb-1"
+              className="bg-white text-sky-600 text-xl font-bold w-3/12 rounded-md pb-1 hover:cursor-pointer"
               onClick={() => handleLogin()}
             />
           </div>

@@ -30,7 +30,7 @@ const ProfileDropdown = (props) => {
     <div
       className={`${
         values.authenticated == false ? "h-20" : "h-40"
-      } text-navbar w-40  bg-slate-200 rounded-xl relative flex flex-col items-center justify-center px-2`}
+      } text-navbar w-40 lg:w-1/2 bg-slate-200 rounded-xl absolute top-16 right-6 lg:right-40 flex flex-col items-center justify-center px-2`}
     >
       {!values.authenticated && (
         <Link

@@ -27,13 +27,13 @@ const Signinup = (props) => {
       <div className=" h-[550px] flex flex-col w-10/12 md:w-4/12 mx-auto my-10 rounded-lg">
         <div className="h-16 flex">
           <div
-            className={`${color1} w-1/2 rounded-t-3xl text-3xl font-extrabold  flex justify-center align-middle hover:cursor-pointer pt-3`}
+            className={`${color1} w-1/2 rounded-t-3xl text-3xl font-bold  flex justify-center align-middle hover:cursor-pointer pt-3`}
             onClick={signIn}
           >
             Sign In
           </div>
           <div
-            className={`${color2}  w-1/2 rounded-t-3xl text-3xl font-extrabold  flex justify-center align-middle pt-3 hover:cursor-pointer`}
+            className={`${color2}  w-1/2 rounded-t-3xl text-3xl font-bold  flex justify-center align-middle pt-3 hover:cursor-pointer`}
             onClick={signUp}
           >
             SignUp
