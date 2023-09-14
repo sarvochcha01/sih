@@ -8,6 +8,8 @@ const Signup = () => {
   const navigate = useNavigate();
   useEffect(() => {}, []);
 
+  const [cursorLoading, setCursorLoading] = useState(false);
+
   const [fullName, setFullName] = useState("");
   const [handle, setHandle] = useState("");
   const [email, setEmail] = useState("");
@@ -31,10 +33,12 @@ const Signup = () => {
         const FBIdToken = `Bearer ${token}`; //Manish
         localStorage.setItem("FBIdToken", FBIdToken); //Manish
         axios.defaults.headers.common["Authorization"] = FBIdToken; //Manish
+        setCursorLoading(false);
         navigate("/");
         window.location.reload();
       })
       .catch((err) => {
+        setCursorLoading(false);
         console.log(err.response.data);
       });
   };
@@ -128,8 +132,13 @@ const Signup = () => {
             <input
               type="button"
               value="Sign Up"
-              className="bg-white text-sky-600 text-xl font-bold w-4/12 md:w-3/12 rounded-md hover:cursor-pointer"
-              onClick={() => handleSubmit()}
+              className={`bg-white text-sky-600 text-xl font-bold w-4/12 md:w-3/12 rounded-md ${
+                cursorLoading ? "hover:cursor-wait" : "hover:cursor-pointer"
+              }`}
+              onClick={() => {
+                handleSubmit();
+                setCursorLoading(true);
+              }}
             />
           </div>
         </form>

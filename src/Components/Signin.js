@@ -11,6 +11,8 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [cursorLoading, setCursorLoading] = useState(false);
+
   const handleLogin = (e) => {
     const userData = {
       email: email,
@@ -25,11 +27,13 @@ const Signin = () => {
         const FBIdToken = `Bearer ${token}`; //Manish
         localStorage.setItem("FBIdToken", FBIdToken); //Manish
         axios.defaults.headers.common["Authorization"] = FBIdToken; //Manish
+        setCursorLoading(false);
         navigate("/");
         window.location.reload();
       })
       .catch((err) => {
         console.log(err.response.data);
+        setCursorLoading(false);
       });
   };
 
@@ -76,8 +80,13 @@ const Signin = () => {
             <input
               type="button"
               value="Sign In"
-              className="bg-white text-sky-600 text-xl font-bold w-3/12 rounded-md pb-1 hover:cursor-pointer"
-              onClick={() => handleLogin()}
+              className={`bg-white text-sky-600 text-xl font-bold w-3/12 rounded-md pb-1 ${
+                cursorLoading ? "hover:cursor-wait" : "hover:cursor-pointer"
+              }`}
+              onClick={() => {
+                handleLogin();
+                setCursorLoading(true);
+              }}
             />
           </div>
         </form>

@@ -1,3 +1,6 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 const SearchAreaLocal = (props) => {
   return (
     <div className="search flex flex-col justify-center items-center w-80 lg:w-full max-w-2xl h-40 space-y-4">
