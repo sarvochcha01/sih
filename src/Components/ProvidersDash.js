@@ -2,7 +2,6 @@ import DashProfile from "./DashProfile";
 import Dashnav from "./Dashnav";
 import Requests from "./DashRequests";
 import DashUpcomingApntmnt from "./DashUpcomingApntmnt";
-import Calender from "./Calendar";
 
 const ProvidersDash = () => {
   return (

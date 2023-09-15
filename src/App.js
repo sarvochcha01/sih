@@ -22,6 +22,8 @@ import Registerclient from "./Components/Registration/Client/Registerclient";
 import RegisterLawFirm from "./Components/Registration/Provider/LawFirm/RegisterLawFirm";
 import ProvidersDash from "./Components/ProvidersDash";
 import RegistrationSuccess from "./Components/Registration/Provider/RegisterationSuccess";
+import Appointment from "./Components/Appointment";
+import AppointmentRequest from "./Components/AppointmentRequest";
 import RequestAppointment from "./Components/RequestAppointment";
 function App() {
   return (
@@ -96,6 +98,8 @@ function App() {
         <Route path="/providerRegister" element={<RegisterProvider />} />
 
         <Route path="/providerRegister" element={<RegisterProvider />} />
+        <Route path="/Appointment" element={<Appointment/>} />
+        <Route path="/AppRequest" element={<AppointmentRequest/>} />
 
         <Route path="/UserSelection" element={<UserSelection />} />
         <Route path="/clientRegister" element={<Registerclient />} />
@@ -103,7 +107,7 @@ function App() {
         <Route path="/ProviderDash" element={<ProvidersDash />} />
         <Route path="/not-found" element={<NotFound404 />} />
 
-        <Route path="/request-appointment" element={<RequestAppointment />} />
+        <Route path="/request-appointment" element={<RequestAppointment/>} />
         <Route path="/success" element={<RegistrationSuccess />} />
 
         <Route path="*" element={<NotFound404 />} />

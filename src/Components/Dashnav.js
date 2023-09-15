@@ -9,7 +9,7 @@ import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { BsCalendar3 } from "react-icons/bs";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import HandleSignOut from "./SignOut";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Dashnav = () => {
   let naviagte = useNavigate();
 
@@ -24,18 +24,15 @@ const Dashnav = () => {
           <BsFillPersonFill />
           <p>Profile</p>
         </div>
-        <div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
-          <FaHistory />
-          <p>Appointment History</p>
-        </div>
-        <div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
+        
+        <Link to = "/AppRequest"><div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
           <AiOutlineAppstoreAdd />
           <p>Appt. Requests</p>
-        </div>
-        <div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
+        </div></Link>
+        <Link to = "/Appointment"><div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
           <BsCalendar3 />
-          <p>Upcoming Appt.</p>
-        </div>
+          <p>Appointments</p>
+        </div></Link>
         <div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
           <MdOutlineEventAvailable />
           <p>Availability</p>
