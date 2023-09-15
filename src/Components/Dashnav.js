@@ -8,7 +8,11 @@ import {BsFillPersonFill} from 'react-icons/bs'
 import {AiOutlineAppstoreAdd} from 'react-icons/ai'
 import {BsCalendar3} from 'react-icons/bs'
 import {MdOutlineEventAvailable} from 'react-icons/md'
+import HandleSignOut from './SignOut'
+import { useNavigate } from 'react-router-dom'
 const Dashnav =()=>{
+    let naviagte = useNavigate()
+
     return(
         <div className="w-72 hidden xl:flex xl:flex-col justify-between mt-4 mb-10">
                 <div className=" px-1">
@@ -42,7 +46,9 @@ const Dashnav =()=>{
                     {/* <BsFillGrid1X2Fill/> */}
                 </div>
                 <div className=" flex justify-center">
-                    <div className='bg-white hover:-translate-y-0.5  drop-shadow-lg flex rounded-sm text-red-600 hover:bg-red-600 hover:text-white items-center space-x-1 h-8 w-24 justify-center'>
+                    <div className='bg-white hover:-translate-y-0.5  drop-shadow-lg flex rounded-sm text-red-600 hover:bg-red-600 hover:text-white items-center space-x-1 h-8 w-24 justify-center'
+                    onClick={() => {HandleSignOut(); naviagte("/")}}
+                    >
                         <BiPowerOff/><span>Logout</span>
                     </div>
                 </div>
