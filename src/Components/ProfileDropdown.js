@@ -3,12 +3,16 @@ import authentication from "../Authentication/authentication";
 import api from "../Authentication/apiAddress";
 import { Link, useNavigate } from "react-router-dom";
 import HandleSignOut from "./SignOut";
+import { useState } from "react";
 
 
 const ProfileDropdown = (props) => {
   const navigate = useNavigate();
   const values = authentication();
 //values.decodedToken.user_id
+
+  
+  
 
   return (
     <div
@@ -34,12 +38,20 @@ const ProfileDropdown = (props) => {
       )}
       {values.authenticated && (
         <>
-          <Link to = "/profile" className="profile hover:bg-navbar hover:text-white hover:cursor-pointer w-4/5 h-12 flex justify-center items-center border border-navbar font-semibold rounded-xl">
+          {localStorage.getItem("WhoIsHe") == "client" && <Link to = "/profile" className="profile hover:bg-navbar hover:text-white hover:cursor-pointer w-4/5 h-12 flex justify-center items-center border border-navbar font-semibold rounded-xl">
             <div onClick={() => {
               props.setProfileDropdownVisibility(false)
             }}>
             Profile
-          </div></Link>
+          </div></Link>}
+
+          {localStorage.getItem("WhoIsHe") == "provider" && <Link to = "/providerdash" className="profile hover:bg-navbar hover:text-white hover:cursor-pointer w-4/5 h-12 flex justify-center items-center border border-navbar font-semibold rounded-xl">
+            <div onClick={() => {
+              props.setProfileDropdownVisibility(false)
+            }}>
+            Dashboard
+          </div></Link>}   
+
           <div
             className="hover:bg-navbar hover:text-white hover:cursor-pointer w-4/5 h-12 flex justify-center items-center border border-navbar font-semibold rounded-xl mt-4"
             onClick={() => {

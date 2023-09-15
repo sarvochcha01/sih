@@ -5,9 +5,31 @@ import CardContainer from "../Components/CardContainer";
 import SearchArea from "../Components/SearchArea";
 import GetUserLocation from "../Components/GetUserLocation";
 import authentication from "../Authentication/authentication";
+import api from "../Authentication/apiAddress";
+import axios from "axios";
+import { useEffect } from "react";
 
 const ClientHome = () => {
+  
+  const clientOrProvider = () => {
+    let values = authentication()
+    if(values.authenticated){
+      axios.post(`${api}/user/whoishe`, {"UID": values.decodedToken.user_id})
+    .then(data => {
+      //setFetchedData(data.data.data.clientPersonalInfo)
+      localStorage.setItem("WhoIsHe", data.data.whoishe)
+    })
+    .catch(err => {
+      console.log("sadge")
+    })
+    }
+  }
 
+  useEffect( () =>{
+    if(localStorage.getItem("WhoIsHe") == "") clientOrProvider() 
+
+  }, [])
+  
   
   return (
     <div className="flex flex-col">

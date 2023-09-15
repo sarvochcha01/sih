@@ -7,7 +7,7 @@ const authentication = () => {
 
   if (token.split("Bearer ")[1]) {
     decodedToken = jwtDecode(token);
-    console.log(decodedToken);
+    //console.log(decodedToken);
     authenticated = true;
     axios.defaults.headers.common["Authorization"] = token;
     if (decodedToken.exp * 1000 < Date.now()) {
@@ -16,6 +16,9 @@ const authentication = () => {
   } else {
     authenticated = false;
   }
+
+  
+
   return {
     authenticated: authenticated,
     decodedToken: decodedToken,
