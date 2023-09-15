@@ -2,6 +2,7 @@ import DashProfile from "./DashProfile";
 import Dashnav from "./Dashnav";
 import Requests from "./DashRequests";
 import DashUpcomingApntmnt from "./DashUpcomingApntmnt";
+import { Link } from "react-router-dom";
 
 const ProvidersDash = () =>{
     return(
@@ -25,9 +26,9 @@ const ProvidersDash = () =>{
                 </div>
                 <div className=" h-3/5 py-2 px-3 mx-3 flex flex-col md:flex-row md:justify-evenly md:pr-6">
                     <div className="bg-white rounded-lg shadow-md shadow-slate-300  md:w-96">
-                        <div className="bg-blue-800 w-full p-2 pl-4 h-12 rounded-t-lg text-lg font-semibold text-gray-200">
+                    <Link to = "/AppRequest"><div className="bg-blue-800 hover:bg-blue-950 w-full p-2 pl-4 h-12 rounded-t-lg text-lg font-semibold text-gray-200">
                             Appointment Requests
-                        </div>
+                        </div></Link>
                         <div className="overflow-auto flex flex-col h-72 scrollbar-hide mt-2">
                             <Requests img="https://shorturl.at/zQZ03" name="Gaurav Anand" case="Criminal Case"/>
                             <Requests img="https://shorturl.at/isF13" name="Ayush Mehta" case="Harrashment Case"/>
@@ -39,10 +40,10 @@ const ProvidersDash = () =>{
                             <Requests img="https://shorturl.at/mO026" name="Anurag Bhushan" case="Molestation Case"/>
                         </div>                    
                     </div>
-                    <div className=" bg-white mt-4 md:mt-0 rounded-lg shadow-lg shadow-slate-300 md:w-96 mb-4">
-                        <div className="bg-blue-800 w-full h-12 rounded-t-lg text-lg font-semibold text-gray-200 p-2 pl-4">
+                    <div className=" bg-white mt-4 md:mt-0 rounded-lg shadow-lg shadow-slate-300 md:w-96 ">
+                    <Link to = "/Appointment"><div className="bg-blue-800 hover:bg-blue-950 w-full h-12 rounded-t-lg text-lg font-semibold text-gray-200 p-2 pl-4">
                             Upcoming Appointments
-                        </div>
+                        </div></Link>
                         <div className="overflow-auto flex flex-col h-72 scrollbar-hide mt-2">
                             <DashUpcomingApntmnt img="https://shorturl.at/zQZ03" name="Divyansh Yaduvanshi" case="Molestation Case" date="30 Sept 2023" time="2:00 PM"/>
                             <DashUpcomingApntmnt img="https://shorturl.at/zQZ03" name="Aayush Patanayak" case="Divorse Case" date="12 Aug 2023" time="10:00 AM"/>
