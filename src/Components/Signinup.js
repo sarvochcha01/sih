@@ -13,13 +13,13 @@ const Signinup = (props) => {
     changeState_signin(false);
     changestate_signup(true);
     changeColor1("bg-white text-black");
-    changecolor2("bg-bluebg text-white");
+    changecolor2("bg-majblue text-white");
   };
 
   const signIn = () => {
     changeState_signin(true);
     changestate_signup(false);
-    changeColor1("bg-bluebg text-white");
+    changeColor1("bg-majblue text-white");
     changecolor2("bg-white text-black");
   };
   return (

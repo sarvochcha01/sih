@@ -91,16 +91,20 @@ const Registerclient = () => {
     localStorage.removeItem("clientOrProvider");
     localStorage.removeItem("typeOfProvider");
   };
-  const [file, setFile] = useState("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS5m7yIkq3oUIi8Gv31tfMsSN3FN_DpkVyEQ&usqp=CAU");
-    function handleChange(e) {
-        console.log(e.target.files);
-        setFile(URL.createObjectURL(e.target.files[0]));
-    }
+  const [file, setFile] = useState(
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS5m7yIkq3oUIi8Gv31tfMsSN3FN_DpkVyEQ&usqp=CAU"
+  );
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
 
   return (
     <div className="w-full h-full">
-      <div className="flex sm:h-12 text-lg font-extrabold my-2 md:my-0 md:text-3xl items-center justify-center h-auto md:mt-16">CLIENT REGISTRATION FORM</div>
-      <div className="container h-auto w-11/12 md:w-8/12 mx-auto md:mt-4 mt-5 rounded-2xl drop-shadow-2xl bg-blue-950 p-4">
+      <div className="flex sm:h-12 text-lg font-extrabold my-2 md:my-0 md:text-3xl items-center justify-center h-auto md:mt-16">
+        CLIENT REGISTRATION FORM
+      </div>
+      <div className="container h-auto w-11/12 md:w-8/12 mx-auto md:mt-4 mt-5 rounded-2xl drop-shadow-2xl bg-majblue p-4">
         <form className="">
           <div className="details flex flex-col-reverse lg:flex-row h-4/5 sm:justify-evenly">
             <div className="personal basis-8/12 sm:ml-20">
@@ -197,7 +201,7 @@ const Registerclient = () => {
                   >
                     <option value="Gender">Gender</option>
                     <option value="Male">Male</option>
-                    <option value="Female">Female</option> 
+                    <option value="Female">Female</option>
                     <option value="Others">Others</option>
                   </select>
                 </div>
@@ -229,8 +233,7 @@ const Registerclient = () => {
                 ></img>
               </div>
               <label htmlFor="uploadbtn" className="flex justify-center">
-                <span className=" mt-2 md:pt-1 rounded-md   w-5/12 md:w-32 md:h-8  font-bold  bg-skyblue flex justify-center">
-                    
+                <span className=" mt-2 md:pt-1 rounded-md  w-5/12 md:w-32 md:h-8  font-bold  bg-white flex justify-center">
                   Select Image
                 </span>
               </label>
@@ -249,13 +252,13 @@ const Registerclient = () => {
               <input
                 type="button"
                 value="Back"
-                className="bg-gray-300 md:w-24 h-10 text-xl font-bold rounded-lg md:mr-20"
+                className="bg-white md:w-24 h-10 text-xl font-bold rounded-lg md:mr-20"
               />
             </Link>
             <input
               type="button"
               value="Register"
-              className={`bg-skyblue  w-5/12 h-10 text-xl font-bold md:w-24 md:ml-20 rounded-lg ${
+              className={`bg-[#00183C] text-white w-5/12 h-10 text-xl font-bold md:w-24 md:ml-20 rounded-lg ${
                 cursorLoading ? "hover:cursor-wait" : "hover:cursor-pointer"
               }`}
               onClick={() => {

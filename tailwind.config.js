@@ -20,6 +20,7 @@ module.exports = {
         skyblue: "#90bdff",
         sidenav: "#00183c",
         "hot-blue": "#012d6f",
+        majblue: "#003f9e",
       },
       height: {
         "user-profile-panel-mobile": "44rem",

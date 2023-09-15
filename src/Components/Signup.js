@@ -46,7 +46,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="h-full w-full bg-bluebg  rounded-b-3xl relative rounded-l-3xl">
+    <div className="h-full w-full bg-majblue  rounded-b-3xl relative rounded-l-3xl">
       {Object.keys(errorObject).length === 0 ? (
         <div></div>
       ) : (

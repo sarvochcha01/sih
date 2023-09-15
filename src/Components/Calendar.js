@@ -21,8 +21,10 @@ const Calender = (props) => {
   }, [calDate, calTime]);
 
   return (
-    <div className="calender-area flex flex-col mt-8 w-full lg:w-2/6 lg:mt-24 rounded-xl border-2 lg:ml-8 lg:h-2/3">
-      <div className="date-area h-32 lg:h-32  bg-white rounded-t-xl overflow-x-auto flex flex-row px-6 space-x-6 snap-x items-center border-b-2">
+    <div className={`${props.className}`}>
+      <div
+        className={`date-area ${props.dateAreaClass}   bg-white rounded-t-xl overflow-x-auto flex flex-row px-6 space-x-6 snap-x items-center border-b-2`}
+      >
         <CalendarDateCard
           date={{ day: "15", month: "6", year: "2023" }}
           slots={6}
@@ -48,7 +50,7 @@ const Calender = (props) => {
           setTime={setTime}
         />
       </div>
-      <div className="slot-area  w-full h-[600px] flex flex-col px-4 py-8 lg:py-4">
+      <div className="slot-area  w-full h-56 flex flex-col px-4 py-8 lg:py-4">
         <div className="morning flex flex-col h-1/3 w-full">
           <div className="text">Slots</div>
           <div className="slots flex flex-row gap-4 flex-wrap">
@@ -75,9 +77,9 @@ const Calender = (props) => {
           </div>
         </div>
       </div>
-      <Link to="/request-appointment">
+      {props.client && (
         <div
-          className="ok flex justify-center self-end text-white bg-sky-700 w-16 hover:cursor-pointer"
+          className="Open flex justify-center self-end text-white bg-sky-700 w-16 hover:cursor-pointer"
           onClick={() => {
             Object.keys(calDate).length === 0 ||
             Object.keys(calTime).length === 0
@@ -88,7 +90,34 @@ const Calender = (props) => {
         >
           OK
         </div>
-      </Link>
+      )}
+
+      {!props.client && (
+        <div className="flex flex-row justify-between px-10">
+          <div
+            className="Open flex justify-center self-end text-white bg-sky-700 w-20  hover:cursor-pointer"
+            onClick={() => {
+              Object.keys(calDate).length === 0 ||
+              Object.keys(calTime).length === 0
+                ? console.log("Select a time")
+                : console.log(dateTime);
+            }}
+          >
+            Open Slot
+          </div>
+          <div
+            className="Open flex justify-center self-end text-white bg-sky-700 w-20  hover:cursor-pointer"
+            onClick={() => {
+              Object.keys(calDate).length === 0 ||
+              Object.keys(calTime).length === 0
+                ? console.log("Select a time")
+                : console.log(dateTime);
+            }}
+          >
+            Close Slot
+          </div>
+        </div>
+      )}
     </div>
   );
 };

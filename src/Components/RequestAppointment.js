@@ -73,7 +73,7 @@ const RequestAppointment = () => {
                 type="text"
                 name=""
                 id=""
-                className="w-4/5 h-10 px-2 bg-slate-200"
+                className="w-4/5 h-10 px-2 bg-white border-2 border-black"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
