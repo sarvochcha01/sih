@@ -6,11 +6,16 @@ const Calender = () => {
   const [calDate, setDate] = useState({});
   const [calTime, setTime] = useState({});
 
+  const [variableName, setVariableName] = useState("");
+
   const [dateTime, setDateTime] = useState("");
 
   useEffect(() => {
     setDateTime(
       `${calDate.year}-${calDate.month}-${calDate.day}T${calTime.hour}:${calTime.minute}:${calTime.second}.000Z`
+    );
+    setVariableName(
+      `${calDate.year}-${calDate.month}-${calDate.day},${calTime.hour}:${calTime.minute}`
     );
   }, [calDate, calTime]);
 

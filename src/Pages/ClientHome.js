@@ -3,34 +3,31 @@ import BgEllipse from "../Components/BgEllipse";
 import Card from "../Components/Card";
 import CardContainer from "../Components/CardContainer";
 import SearchArea from "../Components/SearchArea";
-import GetUserLocation from "../Components/GetUserLocation";
 import authentication from "../Authentication/authentication";
 import api from "../Authentication/apiAddress";
 import axios from "axios";
 import { useEffect } from "react";
 
 const ClientHome = () => {
-  
   const clientOrProvider = () => {
-    let values = authentication()
-    if(values.authenticated){
-      axios.post(`${api}/user/whoishe`, {"UID": values.decodedToken.user_id})
-    .then(data => {
-      //setFetchedData(data.data.data.clientPersonalInfo)
-      localStorage.setItem("WhoIsHe", data.data.whoishe)
-    })
-    .catch(err => {
-      console.log("sadge")
-    })
+    let values = authentication();
+    if (values.authenticated) {
+      axios
+        .post(`${api}/user/whoishe`, { UID: values.decodedToken.user_id })
+        .then((data) => {
+          //setFetchedData(data.data.data.clientPersonalInfo)
+          localStorage.setItem("WhoIsHe", data.data.whoishe);
+        })
+        .catch((err) => {
+          console.log("sadge");
+        });
     }
-  }
+  };
 
-  useEffect( () =>{
-    if(localStorage.getItem("WhoIsHe") == "") clientOrProvider() 
+  useEffect(() => {
+    if (localStorage.getItem("WhoIsHe") === "") clientOrProvider();
+  }, []);
 
-  }, [])
-  
-  
   return (
     <div className="flex flex-col">
       <BgEllipse />
@@ -66,12 +63,12 @@ const ClientHome = () => {
             scale="100px"
           />
           <Card
-            name="Document Writers"
+            name="Deed Writers"
             src="./img/logo/DocumentWriterLogo.png"
             scale="70px"
           />
           <Card
-            name="Consultants"
+            name="Tax Consultants"
             src="./img/logo/ConsultantLogo.png"
             scale="100px"
           />

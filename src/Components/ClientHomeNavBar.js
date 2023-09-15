@@ -1,21 +1,45 @@
 import { FaBars, FaUser } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
+import { VscChromeClose } from "react-icons/vsc";
+
 import { Link } from "react-router-dom";
 
 import authentication from "../Authentication/authentication";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ProfileDropdown from "./ProfileDropdown";
-import HandleSignOut from "./SignOut";
+import SideNav from "./SideNav/SideNav";
+import useBodyScrollLock from "./useBodyScrollLock";
 
 const ClientHomeNavbar = () => {
   const [profileDropdownVisible, setProfileDropdownVisibility] =
     useState(false);
 
+  const [isSideNavOpen, SetSideNavOpen] = useState(false);
+  const [isLocked, toggle] = useBodyScrollLock();
+
+  const onClickHandler = () => {
+    SetSideNavOpen(!isSideNavOpen);
+    toggle();
+  };
+
   return (
     <div className="flex bg-navbar w-full h-16 z-50 fixed text-white justify-center">
+      {isSideNavOpen && <SideNav />}
+
       <div className="nav-content flex flex-row w-full max-w-screen-4xl h-full justify-center">
         <div className="sm-nav  w-1/4 h-full lg:hidden flex justify-center items-center">
-          <FaBars className="text-2xl" />
+          <div className="menu-icon flex items-center justify-start w-1/4 md:hidden">
+            {!isSideNavOpen && (
+              <FiMenu className="text-2xl" onClick={() => onClickHandler()} />
+            )}
+            {isSideNavOpen && (
+              <VscChromeClose
+                className="text-2xl"
+                onClick={() => onClickHandler()}
+              />
+            )}
+          </div>
         </div>
         <div className="logo w-2/4 md:w-1/4 h-full  flex justify-center items-center">
           <Link to="/">
@@ -44,12 +68,14 @@ const ClientHomeNavbar = () => {
           </div>
         </div>
         <div className="account w-1/4 relative h-full  flex justify-center items-center flex-col space-x-8">
-          <FaUser
-            className="text-3xl md:hidden"
-            onClick={() =>
-              setProfileDropdownVisibility(!profileDropdownVisible)
-            }
-          />
+          {!isSideNavOpen && (
+            <FaUser
+              className="text-3xl md:hidden"
+              onClick={() =>
+                setProfileDropdownVisibility(!profileDropdownVisible)
+              }
+            />
+          )}
           {profileDropdownVisible && (
             <ProfileDropdown
               setProfileDropdownVisibility={setProfileDropdownVisibility}

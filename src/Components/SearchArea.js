@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import GetUserLocation from "./GetUserLocation";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const SearchArea = () => {
@@ -10,6 +9,7 @@ const SearchArea = () => {
   const handleCityInput = (e) => {
     let searchQuery = e.charAt(0).toUpperCase() + e.slice(1);
     setCity(searchQuery);
+    global.UserSearchLocation = searchQuery;
     console.log(city);
     let citySearchUrl = `https://geocode.maps.co/search?q=${searchQuery}`;
     axios
@@ -41,6 +41,7 @@ const SearchArea = () => {
       let finalEndPoint = `https://geocode.maps.co/reverse?lat=${lat}&lon=${lon}`;
       axios.get(finalEndPoint).then((res) => {
         setCity(res.data.address.city);
+        global.UserSearchLocation = res.data.address.city;
         console.log(res.data);
       });
     };
@@ -95,13 +96,20 @@ const SearchArea = () => {
                 onChange={(e) => handleCityInput(e.target.value)}
               />
             </div>
-            {cityList.length == 0 ? (
+            {cityList.length === 0 ? (
               ""
             ) : (
-              <div className="bg-slate-300 text-black w-full">
+              <div className="bg-slate-300 text-black w-full relative z-50">
                 {cityList.map((cityName) => {
                   return (
-                    <div className="hover:cursor-pointer hover:bg-slate-400 px-2 py-2 my-2 ">
+                    <div
+                      className="hover:cursor-pointer hover:bg-slate-400 px-2 py-2 my-2 "
+                      onClick={() => {
+                        setCity(cityName);
+                        global.UserSearchLocation = cityName;
+                        setCityList([]);
+                      }}
+                    >
                       {cityName}
                     </div>
                   );

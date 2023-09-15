@@ -1,6 +1,3 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-
 const SearchAreaLocal = (props) => {
   return (
     <div className="search flex flex-col justify-center items-center w-80 lg:w-full max-w-2xl h-40 space-y-4">
@@ -21,7 +18,7 @@ const SearchAreaLocal = (props) => {
             name=""
             id=""
             className="w-full h-full rounded-2xl lg:rounded-none lg:rounded-r-3xl bg-white px-4 text-xl border outline-none hover:ring-1 focus:ring-2 ring-card-btn"
-            placeholder={props.searchLocation}
+            placeholder={global.UserSearchLocation}
           />
         </div>
       </div>
