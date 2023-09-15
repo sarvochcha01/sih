@@ -16,10 +16,10 @@ import jwtDecode from "jwt-decode";
 
 //checking for authorization
 
-import RegisterProvider from "./Components/Registration/Provider/RegisterProvider";
+import RegisterProvider from "./Components/Registration/Provider/Lawyer/RegisterProvider";
 import UserSelection from "./Components/UserSelection";
 import Registerclient from "./Components/Registration/Client/Registerclient";
-import RegisterLawFirm from "./Components/Registration/Provider/RegisterLawFirm";
+import RegisterLawFirm from "./Components/Registration/Provider/LawFirm/RegisterLawFirm";
 import ProvidersDash from "./Components/ProvidersDash";
 import RegistrationSuccess from "./Components/Registration/Provider/RegisterationSuccess";
 function App() {

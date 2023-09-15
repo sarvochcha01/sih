@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { useState } from "react";
-import api from "../../../Authentication/apiAddress";
+import api from "../../../../Authentication/apiAddress";
 import { useNavigate } from "react-router-dom";
 const ProviderDocUpload =(props)=>{
     const [Bvisible, changeBvisible] = useState(true);

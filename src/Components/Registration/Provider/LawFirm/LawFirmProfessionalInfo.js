@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Professionalinfo =(props)=>{
+const LawFirmProfessionalInfo =(props)=>{
     
     const [yearsOfExperience, setYearsOfExperience] = useState();
     const [lawFirm, setLawFirm] = useState();
@@ -52,7 +52,7 @@ const Professionalinfo =(props)=>{
                             
 
                             <div className="contact flex  justify-between sm:h-9 mt-3 mb-2">
-                                <div className="title  lg:basis-4/12 basis-1/2"><label className=" text-white font-semibold lg:text-md text-md">Year of Experience:</label></div>
+                                <div className="title  lg:basis-4/12 basis-1/2"><label className=" text-white font-semibold lg:text-md text-md">Area of Practices :</label></div>
                                 <div className="value basis-6/12">
                                 <input type="number" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "
                                 onChange={(e) => handleYearsOfExperience(e)}
@@ -78,7 +78,7 @@ const Professionalinfo =(props)=>{
                                 /></div>
                             </div>
 
-                            <div className="Language flex justify-between md:flex-row flex-col sm:h-9 mt-3 mb-2">
+                            {/* <div className="Language flex justify-between md:flex-row flex-col sm:h-9 mt-3 mb-2">
                                 <div className="title lg:basis-4/12 basis-1/2"><label for="user" className="text-white font-semibold text-md">Type of Lawyer :</label></div>
                                 <div className="value lg:basis-7/12  py-3 sm:py-0 md:mb-8"><select name="user" id="user" className="text-black w-auto mx-10 md:ml-14 text-base rounded-lg px-2 py-1 border-2 border-slate-500 bg-gray-300"
                                 
@@ -106,7 +106,7 @@ const Professionalinfo =(props)=>{
                                     <option value="notary">Property lawyer</option>
                                     <option value="client">Divorce lawyer</option>
                                     </select></div>
-                                    </div>
+                                    </div> */}
                             {/* <div className="ocupation flex  justify-between sm:h-9 mt-3 mb-4">
                                 <div className="title  basis-4/12">
                                     <label className="text-white font-bold text-md">Bar Association Certificate :</label>
@@ -119,7 +119,7 @@ const Professionalinfo =(props)=>{
                                 
                             </div> */}
                             <div className="DOB flex flex-col justify-between sm:h-auto mt-3 mb-8">
-                                <div className="title  basis-4/12"><label className="text-white font-semibold text-md">Bio<span className="text-sm font-light">(Description of your profile):</span><br/></label></div>
+                                <div className="title  basis-4/12"><label className="text-white font-semibold text-md">Firm Description :<span className="text-sm font-light">(Brief about your Law Firm):</span><br/></label></div>
                                 <div className="value basis-11/12">
                                 <textarea type="text" className="rounded-xl border-2 border-slate-700 h-32 w-full p-2 sm:h-32 overflow-y-auto  cursor-auto"
                                 onChange={(e) => handleBio(e)}
@@ -137,4 +137,4 @@ const Professionalinfo =(props)=>{
         </div>
     );
 }
-export default Professionalinfo; 
+export default LawFirmProfessionalInfo; 

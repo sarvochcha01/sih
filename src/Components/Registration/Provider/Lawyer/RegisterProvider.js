@@ -3,7 +3,7 @@ import Personalinfo from "./Personalinfo";
 import Professionalinfo from "./Profesionalinfo";
 
 import { useState } from "react";
-import RegistrationSuccess from "./RegisterationSuccess";
+import RegistrationSuccess from "./../RegisterationSuccess";
 import ProviderDocUpload from "./ProviderDocUpload";
 
 const RegisterProvider =()=>{

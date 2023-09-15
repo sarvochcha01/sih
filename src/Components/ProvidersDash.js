@@ -39,7 +39,7 @@ const ProvidersDash = () =>{
                             <Requests img="https://shorturl.at/mO026" name="Anurag Bhushan" case="Molestation Case"/>
                         </div>                    
                     </div>
-                    <div className=" bg-white rounded-lg shadow-lg shadow-slate-300 md:w-96">
+                    <div className=" bg-white mt-4 md:mt-0 rounded-lg shadow-lg shadow-slate-300 md:w-96 mb-4">
                         <div className="bg-blue-800 w-full h-12 rounded-t-lg text-lg font-semibold text-gray-200 p-2 pl-4">
                             Upcoming Appointments
                         </div>
@@ -54,10 +54,10 @@ const ProvidersDash = () =>{
                             <DashUpcomingApntmnt img="https://shorturl.at/zQZ03" name="Anurag Bhushan" case="Smuggling Case" date="12 Oct 2023" time="4:00 PM"/>
                         </div>
                     </div>
-                    <div className=" rounded-lg shadow-lg shadow-slate-300 md:w-96">
+                    <div className="bg-pink-950 rounded-lg shadow-lg shadow-slate-300 md:w-96">
                     <div className="bg-blue-800 w-full h-12 rounded-t-lg text-lg font-semibold text-gray-200 p-2 pl-4">
                         Availability
-                    </div>
+                    </div>  
                     </div>
                 </div>
             </div>
