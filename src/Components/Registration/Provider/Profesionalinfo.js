@@ -82,6 +82,8 @@ const Professionalinfo =(props)=>{
                                 <div className="title lg:basis-4/12 basis-1/2"><label for="user" className="text-white font-semibold text-md">Type of Lawyer :</label></div>
                                 <div className="value lg:basis-7/12  py-3 sm:py-0 md:mb-8"><select name="user" id="user" className="text-black w-auto mx-10 md:ml-14 text-base rounded-lg px-2 py-1 border-2 border-slate-500 bg-gray-300"
                                 
+                                onChange={(e) => handleTypeOfLawyer(e)}
+                                value={localStorage.getItem("providerTypeOfLawyer")}
                                 >
                                     <option value="client">Criminal Lawyer</option>
                                     <option value="lawyer">Family Lawyers</option>

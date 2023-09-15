@@ -5,15 +5,15 @@ const EduInfo2 =()=>{
     const [passingYear, setPassingYear] = useState();
     const handleDegree = (e) => {
         setDegree(e.target.value)
-        localStorage.setItem("providerDegree", e.target.value)
+        localStorage.setItem("providerDegree2", e.target.value)
     }
     const handleNameOfCollege = (e) => {
         setNameOfCollege(e.target.value)
-        localStorage.setItem("providerNameOfCollege", e.target.value)
+        localStorage.setItem("providerNameOfCollege2", e.target.value)
     }
     const handlePassingYear = (e) => {
         setPassingYear(e.target.value)
-        localStorage.setItem("providerPassingYear", e.target.value)
+        localStorage.setItem("providerPassingYear2", e.target.value)
     }
     return(
         <div className="personal basis-8/12 sm:ml-20 mt-4" id="edu1">
@@ -23,7 +23,7 @@ const EduInfo2 =()=>{
                                 <div className="value basis-7/12 ">
                                 <input className="rounded-xl border-2 border-slate-700 h-8  sm:h-full w-full float-right"
                                 onChange={(e) => handleDegree(e)}
-                                value={localStorage.getItem("providerDegree")}
+                                value={localStorage.getItem("providerDegree2")}
                                 /></div>
                             </div>
 
@@ -32,7 +32,7 @@ const EduInfo2 =()=>{
                                 <div className="value basis-7/12">
                                 <input className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "
                                 onChange={(e) => handleNameOfCollege(e)}
-                                value={localStorage.getItem("providerNameOfCollege")}
+                                value={localStorage.getItem("providerNameOfCollege2")}
                                 /></div>
                             </div>
 
@@ -41,7 +41,7 @@ const EduInfo2 =()=>{
                                 <div className="value basis-7/12">
                                 <input type="number" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "
                                 onChange={(e) => handlePassingYear(e)}
-                                value={localStorage.getItem("providerPassingYear")}
+                                value={localStorage.getItem("providerPassingYear2")}
                                 /></div>
                             </div>
                         </div>

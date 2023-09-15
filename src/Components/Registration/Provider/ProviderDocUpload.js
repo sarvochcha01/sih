@@ -1,4 +1,8 @@
+import axios from "axios";
+import jwtDecode from "jwt-decode";
 import { useState } from "react";
+import api from "../../../Authentication/apiAddress";
+import { useNavigate } from "react-router-dom";
 const ProviderDocUpload =(props)=>{
     const [Bvisible, changeBvisible] = useState(true);
      const [Mvisible, changeMvisible] = useState(false);
@@ -8,6 +12,109 @@ const ProviderDocUpload =(props)=>{
      const Eduinfobox2 = () => {
         changeMvisible(!Mvisible);
     };
+
+    let navigate = useNavigate()
+
+
+
+    const handleSubmitDetails = () => {
+        //let clientOrProvider = localStorage.getItem("clientOrProvider")
+        let typeOfProvider = localStorage.getItem("typeOfProvider")
+        let providerPersonalInfo = 
+        {
+            "providerFullName" : localStorage.getItem("providerFullName"),
+            "providerContact" : localStorage.getItem("providerContact"),
+            "providerEmail":localStorage.getItem("providerEmail"),
+            "providerDob":localStorage.getItem("providerDob"),
+            "providerLanguages":localStorage.getItem("providerLanguages"),
+            "providerGender":localStorage.getItem("providerGender"),
+            "providerAddress":localStorage.getItem("providerAddress")
+        }
+        let providerProfessionalInfo = 
+        {
+            "providerYearsOfExperience":localStorage.getItem("providerYearsOfExperience"),
+            "providerLawFirm":localStorage.getItem("providerLawFirm"),
+            "providerWorkLocation":localStorage.getItem("providerWorkLocation"),
+            "providerBio":localStorage.getItem("providerBio")
+        }      
+        let providerEducationalInfo = 
+        {
+            "providerDegree":localStorage.getItem("providerDegree"),
+            "providerNameOfCollege":localStorage.getItem("providerNameOfCollege"),
+            "providerPassingYear":localStorage.getItem("providerPassingYear"),
+            "providerDegree2":localStorage.getItem("providerDegree2"),
+            "providerNameOfCollege2":localStorage.getItem("providerNameOfCollege2"),
+            "providerPassingYear2":localStorage.getItem("providerPassingYear2")
+        } 
+
+        let providerInformation = {typeOfProvider, providerPersonalInfo, providerEducationalInfo, providerProfessionalInfo}
+        console.log(providerInformation)
+
+        //AXIOS PUSH TO DATABASE
+        //AXIOS PUSH TO DATABASE
+    let token =
+        localStorage.FBIdToken == null ? "Bearer " : localStorage.FBIdToken;
+    let UID = "";
+    if (token.split("Bearer ")[1]) {
+        let decodedToken = jwtDecode(token);
+        UID = decodedToken.user_id;
+    }
+    let bundledInfo = { UID, providerInformation };
+
+    axios
+        .post(`${api}/user/providerInformation`, bundledInfo)
+        .then(() => {
+        console.log("Successfully Uploaded");
+        deleteLocalStorage();
+        navigate("/success")
+        //setCursorLoading(false);
+        window.location.reload();
+        })
+        .catch((err) => {
+        //setCursorLoading(false);
+        console.log("Error", err);
+        });
+
+
+
+
+        //deleteLocalStorage()
+
+    }
+
+    const deleteLocalStorage = () => {
+        localStorage.removeItem("providerFullName")
+        localStorage.removeItem("providerContact")
+        localStorage.removeItem("providerEmail")
+        localStorage.removeItem("providerDob")
+        localStorage.removeItem("providerLanguages")
+        localStorage.removeItem("providerGender")
+        localStorage.removeItem("providerAddress")
+
+        localStorage.removeItem("providerYearsOfExperience")
+        localStorage.removeItem("providerLawFirm")
+        localStorage.removeItem("providerWorkLocation")
+        localStorage.removeItem("providerBio")
+
+        localStorage.removeItem("providerDegree")
+        localStorage.removeItem("providerNameOfCollege")
+        localStorage.removeItem("providerPassingYear")
+
+        localStorage.removeItem("providerDegree2")
+        localStorage.removeItem("providerNameOfCollege2")
+        localStorage.removeItem("providerPassingYear2")
+
+        localStorage.removeItem("clientOrProvider")
+        localStorage.removeItem("typeOfProvider")
+
+       
+    }
+
+
+
+
+
+
     return(
         <div>
         <div className="h-10 w-full flex justify-center mt-2 px-8 md:px-96">
@@ -49,7 +156,7 @@ const ProviderDocUpload =(props)=>{
                     </div>
                     <div className="flex justify-center space-x-6  my-2">
                 <input onClick={() => props.pfun()} type="reset" value="Back" className="bg-gray-300 border-2 border-slate-400 rounded-lg w-5/12 md:w-3/12 h-10 text-xl font-extrabold"/>
-                <input type="submit" onClick={() => props.nfun()} value="Next" className="bg-sky-300 border-2 border-slate-400 w-5/12 h-10 text-xl rounded-lg font-extrabold md:w-3/12"/>
+                <input type="button" onClick={() => {handleSubmitDetails()}} value="Submit" className="bg-sky-300 border-2 border-slate-400 w-5/12 h-10 text-xl rounded-lg font-extrabold md:w-3/12"/>
                 </div>
                 </form>
              </div> 

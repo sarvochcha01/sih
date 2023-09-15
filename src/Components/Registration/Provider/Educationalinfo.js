@@ -4,66 +4,7 @@ import EduInfo2 from "./EduInfo2";
 
 const Educationalinfo =(props)=>{
     
-    const handleSubmitDetails = () => {
-        let clientOrProvider = localStorage.getItem("clientOrProvider")
-        let typeOfProvider = localStorage.getItem("typeOfProvider")
-        let providerPersonalInfo = 
-        {
-            "providerFullName" : localStorage.getItem("providerFullName"),
-            "providerContact" : localStorage.getItem("providerContact"),
-            "providerEmail":localStorage.getItem("providerEmail"),
-            "providerDob":localStorage.getItem("providerDob"),
-            "providerLanguages":localStorage.getItem("providerLanguages"),
-            "providerGender":localStorage.getItem("providerGender"),
-            "providerAddress":localStorage.getItem("providerAddress")
-        }
-        let providerProfessionalInfo = 
-        {
-            "providerYearsOfExperience":localStorage.getItem("providerYearsOfExperience"),
-            "providerLawFirm":localStorage.getItem("providerLawFirm"),
-            "providerWorkLocation":localStorage.getItem("providerWorkLocation"),
-            "providerBio":localStorage.getItem("providerBio")
-        }      
-        let providerEducationalInfo = 
-        {
-            "providerDegree":localStorage.getItem("providerDegree"),
-            "providerNameOfCollege":localStorage.getItem("providerNameOfCollege"),
-            "providerPassingYear":localStorage.getItem("providerPassingYear")
-        } 
-
-        //AXIOS PUSH TO DATABASE
-        console.log(providerPersonalInfo)
-        console.log(providerProfessionalInfo)
-        console.log(providerEducationalInfo)
-        console.log(clientOrProvider)
-        console.log(typeOfProvider)
-        deleteLocalStorage()
-
-    }
-
-    const deleteLocalStorage = () => {
-        localStorage.removeItem("providerFullName")
-        localStorage.removeItem("providerContact")
-        localStorage.removeItem("providerEmail")
-        localStorage.removeItem("providerDob")
-        localStorage.removeItem("providerLanguages")
-        localStorage.removeItem("providerGender")
-        localStorage.removeItem("providerAddress")
-
-        localStorage.removeItem("providerYearsOfExperience")
-        localStorage.removeItem("providerLawFirm")
-        localStorage.removeItem("providerWorkLocation")
-        localStorage.removeItem("providerBio")
-
-        localStorage.removeItem("providerDegree")
-        localStorage.removeItem("providerNameOfCollege")
-        localStorage.removeItem("providerPassingYear")
-
-        localStorage.removeItem("clientOrProvider")
-        localStorage.removeItem("typeOfProvider")
-
-       
-    }
+    
      // frontend
      const [Bvisible, changeBvisible] = useState(true);
      const [Mvisible, changeMvisible] = useState(false);
@@ -106,7 +47,7 @@ const Educationalinfo =(props)=>{
                     </div>
                     <div className="flex justify-center space-x-6  my-2">
                 <input type="reset" value="Back" onClick={() => props.pfun()} className="bg-gray-300 border-2 border-slate-400 w-24 md:w-24 h-10 text-xl font-extrabold rounded-lg md:mr-20"/>
-                <input type="button" value="Next" onClick={() => {handleSubmitDetails();props.nfun()}} className="bg-sky-300 border-2 border-slate-400 w-24 h-10 text-xl font-extrabold md:w-24 rounded-lg md:ml-20"
+                <input type="button" value="Next" onClick={() => {props.nfun()}} className="bg-sky-300 border-2 border-slate-400 w-24 h-10 text-xl font-extrabold md:w-24 rounded-lg md:ml-20"
                 />
                 </div>
                 </form>

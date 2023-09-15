@@ -4,8 +4,11 @@ import Card from "../Components/Card";
 import CardContainer from "../Components/CardContainer";
 import SearchArea from "../Components/SearchArea";
 import GetUserLocation from "../Components/GetUserLocation";
+import authentication from "../Authentication/authentication";
 
 const ClientHome = () => {
+
+  
   return (
     <div className="flex flex-col">
       <BgEllipse />

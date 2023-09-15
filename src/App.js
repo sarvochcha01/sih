@@ -22,6 +22,7 @@ import UserSelection from "./Components/UserSelection";
 import Registerclient from "./Components/Registration/Client/Registerclient";
 import RegisterLawFirm from "./Components/Registration/Provider/RegisterLawFirm";
 import ProvidersDash from "./Components/ProvidersDash";
+import RegistrationSuccess from "./Components/Registration/Provider/RegisterationSuccess";
 function App() {
   return (
     <div className="flex flex-col w-full">
@@ -58,17 +59,13 @@ function App() {
         <Route path="/providerRegister" element={<RegisterProvider />} />
         <Route path="/UserSelection" element={<UserSelection />} />
         <Route path="/clientRegister" element={<Registerclient />} />
-        
 
         <Route path="/providerRegister" element={<RegisterProvider/>} />
 
-        <Route path="/providerRegister" element={<RegisterProvider/>} />  
-
-        <Route path="/UserSelection" element={<UserSelection/>} />
-        <Route path="/clientRegister" element={<Registerclient/>} />
         <Route path="/LawFirmRegister" element={<RegisterLawFirm/>} /> 
         <Route path="/ProviderDash" element={<ProvidersDash/>} />        
         <Route path="/not-found" element={<NotFound404/>} />
+        <Route path="/success" element={<RegistrationSuccess/>} />
 
         <Route path="*" element={<NotFound404 />} />
       </Routes>

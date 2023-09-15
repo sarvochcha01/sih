@@ -24,8 +24,7 @@ const RegisterProvider =()=>{
             {state === 1 && <Personalinfo nfun={nextState} pfun={prevState}/>}
             {state === 2 && <Professionalinfo nfun={nextState} pfun={prevState}/>}
             {state === 3 && <Educationalinfo nfun={nextState} pfun={prevState}/>}
-            {state === 4 && <ProviderDocUpload nfun={nextState} pfun={prevState}/>}
-            {state === 5 && <RegistrationSuccess nfun={nextState} pfun={prevState}/>} 
+            {state === 4 && <ProviderDocUpload nfun={nextState} pfun={prevState}/>} 
         </div>
     );
 }
