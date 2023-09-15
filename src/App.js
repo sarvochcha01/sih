@@ -18,7 +18,6 @@ import jwtDecode from "jwt-decode";
 
 import RegisterProvider from "./Components/Registration/Provider/RegisterProvider";
 import UserSelection from "./Components/UserSelection";
-
 import Registerclient from "./Components/Registration/Client/Registerclient";
 import RegisterLawFirm from "./Components/Registration/Provider/RegisterLawFirm";
 import ProvidersDash from "./Components/ProvidersDash";
@@ -55,17 +54,21 @@ function App() {
         />
         <Route path="/signin" element={<Signinup a={true} b={false} />} />
         <Route path="/signup" element={<Signinup a={false} b={true} />} />
-
         <Route path="/providerRegister" element={<RegisterProvider />} />
         <Route path="/UserSelection" element={<UserSelection />} />
         <Route path="/clientRegister" element={<Registerclient />} />
 
-        <Route path="/providerRegister" element={<RegisterProvider/>} />
+        <Route path="/providerRegister" element={<RegisterProvider />} />
 
-        <Route path="/LawFirmRegister" element={<RegisterLawFirm/>} /> 
-        <Route path="/ProviderDash" element={<ProvidersDash/>} />        
-        <Route path="/not-found" element={<NotFound404/>} />
-        <Route path="/success" element={<RegistrationSuccess/>} />
+        <Route path="/providerRegister" element={<RegisterProvider />} />
+
+        <Route path="/providerRegister" element={<RegisterProvider />} />
+
+        <Route path="/UserSelection" element={<UserSelection />} />
+        <Route path="/clientRegister" element={<Registerclient />} />
+        <Route path="/LawFirmRegister" element={<RegisterLawFirm />} />
+        <Route path="/ProviderDash" element={<ProvidersDash />} />
+        <Route path="/not-found" element={<NotFound404 />} />
 
         <Route path="*" element={<NotFound404 />} />
       </Routes>
