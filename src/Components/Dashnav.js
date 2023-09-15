@@ -9,11 +9,10 @@ import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { BsCalendar3 } from "react-icons/bs";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import HandleSignOut from "./SignOut";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Dashnav = () => {
   let naviagte = useNavigate();
 
-<<<<<<< Updated upstream
   return (
     <div className="w-72 hidden xl:flex xl:flex-col justify-between mt-16 mb-10">
       <div className=" px-1">
@@ -25,18 +24,15 @@ const Dashnav = () => {
           <BsFillPersonFill />
           <p>Profile</p>
         </div>
-        <div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
-          <FaHistory />
-          <p>Appointment History</p>
-        </div>
-        <div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
+        
+        <Link to = "/AppRequest"><div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
           <AiOutlineAppstoreAdd />
           <p>Appt. Requests</p>
-        </div>
-        <div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
+        </div></Link>
+        <Link to = "/Appointment"><div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
           <BsCalendar3 />
-          <p>Upcoming Appt.</p>
-        </div>
+          <p>Appointments</p>
+        </div></Link>
         <div className=" h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm ">
           <MdOutlineEventAvailable />
           <p>Availability</p>
@@ -71,46 +67,3 @@ const Dashnav = () => {
   );
 };
 export default Dashnav;
-=======
-    return(
-        <div className="w-72 hidden xl:flex xl:flex-col justify-between mt-6 mb-10">
-                <div className=" px-1">
-                    <div className=' h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm '>
-                        <IoGrid /><p>Dashboard</p>
-                    </div>
-                    <div className=' h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm '>
-                        <BsFillPersonFill/><p>Profile</p>
-                    </div>
-                    
-                    <div className=' h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm '>
-                        <AiOutlineAppstoreAdd/><p>Appt. Requests</p>
-                    </div>
-                    <div className=' h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm '>
-                        <BsCalendar3/><p>Appointments</p>
-                    </div>
-                    <div className=' h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm '>
-                        <MdOutlineEventAvailable/><p>Availability</p>
-                    </div>
-                    <div className='h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-3.5 space-x-3 font-semibold rounded-md my-0.5 text-sm '>
-                        <BiSolidNotification className='text-2xl'/><p className=''>Notification</p>
-                    </div>
-                    <div className=' h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm '>
-                        <FaWallet/><p>Wallet</p>
-                    </div>
-                    <div className=' h-10 hover:bg-bluebg hover:text-white text-blue-900 flex justify-start items-center px-4 space-x-4 font-semibold rounded-md my-0.5 text-sm '>
-                        <FiEdit/><p>Edit Profile</p>
-                    </div>
-                    {/* <BsFillGrid1X2Fill/> */}
-                </div>
-                <div className=" flex justify-center">
-                    <div className='bg-white hover:-translate-y-0.5  drop-shadow-lg flex rounded-sm text-red-600 hover:bg-red-600 hover:text-white items-center space-x-1 h-8 w-24 justify-center'
-                    onClick={() => {HandleSignOut(); naviagte("/")}}
-                    >
-                        <BiPowerOff/><span>Logout</span>
-                    </div>
-                </div>
-            </div>
-    );
-}
-export default Dashnav;
->>>>>>> Stashed changes

@@ -22,12 +22,9 @@ import Registerclient from "./Components/Registration/Client/Registerclient";
 import RegisterLawFirm from "./Components/Registration/Provider/LawFirm/RegisterLawFirm";
 import ProvidersDash from "./Components/ProvidersDash";
 import RegistrationSuccess from "./Components/Registration/Provider/RegisterationSuccess";
-<<<<<<< Updated upstream
-import RequestAppointment from "./Components/RequestAppointment";
-=======
 import Appointment from "./Components/Appointment";
 import AppointmentRequest from "./Components/AppointmentRequest";
->>>>>>> Stashed changes
+import RequestAppointment from "./Components/RequestAppointment";
 function App() {
   return (
     <div className="flex flex-col w-full">
@@ -110,7 +107,7 @@ function App() {
         <Route path="/ProviderDash" element={<ProvidersDash />} />
         <Route path="/not-found" element={<NotFound404 />} />
 
-        <Route path="/request-appointment" element={<RequestAppointment />} />
+        <Route path="/request-appointment" element={<RequestAppointment/>} />
         <Route path="/success" element={<RegistrationSuccess />} />
 
         <Route path="*" element={<NotFound404 />} />
