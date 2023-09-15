@@ -14,7 +14,7 @@ const ServiceProviderProfile = () => {
         <SearchAreaLocal />
         <div className="content w-80 flex flex-col lg:flex-row lg:w-4/5 lg:self-start lg:ml-60  mt-12">
           <ServiceProviderProfileCard id={id} />
-          <Calender />
+          <Calender id={id} />
         </div>
       </div>
     </div>

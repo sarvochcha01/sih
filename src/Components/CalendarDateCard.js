@@ -3,14 +3,16 @@ import TimeSlot from "./TimeSlot";
 const CalendarDateCard = (props) => {
   return (
     <div
-      className="date-card flex flex-col w-40 h-14 shrink-0 snap-center items-center justify-center rounded-lg hover:cursor-pointer text-black bg-slate-200"
+      className="date-card flex flex-col w-36 h-20 lg:h-14 shrink-0 snap-center items-center justify-center rounded-lg hover:cursor-pointer font-bold text-white bg-[#3070D0] "
       onClick={() => {
         props.setDate(props.date);
         props.setTime({});
       }}
     >
       <div className="date flex">{props.date.day + "/" + props.date.month}</div>
-      <div className="slots flex">{props.slots} Slots available</div>
+      <div className="slots flex text-center">
+        {props.slots} Slots available
+      </div>
     </div>
   );
 };

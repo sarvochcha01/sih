@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CalendarDateCard from "./CalendarDateCard";
 import TimeSlot from "./TimeSlot";
 
-const Calender = () => {
+const Calender = (props) => {
   const [calDate, setDate] = useState({});
   const [calTime, setTime] = useState({});
 
@@ -21,7 +21,7 @@ const Calender = () => {
 
   return (
     <div className="calender-area flex flex-col mt-8 w-full lg:w-2/6 lg:mt-24 rounded-xl border-2 lg:ml-8 lg:h-2/3">
-      <div className="date-area h-20 lg:h-32  bg-navbar rounded-t-xl overflow-x-auto flex flex-row px-10 space-x-10 snap-x items-center">
+      <div className="date-area h-32 lg:h-32  bg-white rounded-t-xl overflow-x-auto flex flex-row px-6 space-x-6 snap-x items-center border-b-2">
         <CalendarDateCard
           date={{ day: "15", month: "6", year: "2023" }}
           slots={6}
@@ -80,6 +80,7 @@ const Calender = () => {
           Object.keys(calDate).length === 0 || Object.keys(calTime).length === 0
             ? console.log("Select a time")
             : console.log(dateTime);
+          console.log(props.id);
         }}
       >
         OK

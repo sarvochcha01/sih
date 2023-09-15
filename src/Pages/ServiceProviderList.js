@@ -8,7 +8,7 @@ const ServiceProviderList = (props) => {
   }, []);
 
   return (
-    <div className="w-full flex justify-center mt-16">
+    <div className="w-full flex justify-center mt-20">
       <div className=" flex flex-col w-full max-w-screen-2xl items-center">
         <SearchAreaLocal
           searchName={props.searchName}

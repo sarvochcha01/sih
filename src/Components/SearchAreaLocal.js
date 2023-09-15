@@ -8,8 +8,8 @@ const SearchAreaLocal = (props) => {
             type="text"
             name=""
             id=""
-            className="w-full h-full rounded-2xl bg-white px-4 text-xl lg:rounded-none lg:rounded-l-3xl border outline-none hover:ring-1 focus:ring-2 ring-card-btn"
-            placeholder={props.searchName}
+            className="w-full h-full rounded-2xl bg-white px-4 text-lg lg:rounded-none lg:rounded-l-3xl border outline-none hover:ring-1 focus:ring-2 ring-card-btn"
+            placeholder={global.UserSearchService}
           />
         </div>
         <div className="w-full h-12">
@@ -17,7 +17,7 @@ const SearchAreaLocal = (props) => {
             type="text"
             name=""
             id=""
-            className="w-full h-full rounded-2xl lg:rounded-none lg:rounded-r-3xl bg-white px-4 text-xl border outline-none hover:ring-1 focus:ring-2 ring-card-btn"
+            className="w-full h-full rounded-2xl lg:rounded-none lg:rounded-r-3xl bg-white px-4 text-lg border outline-none hover:ring-1 focus:ring-2 ring-card-btn"
             placeholder={global.UserSearchLocation}
           />
         </div>

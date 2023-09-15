@@ -22,6 +22,7 @@ import Registerclient from "./Components/Registration/Client/Registerclient";
 import RegisterLawFirm from "./Components/Registration/Provider/LawFirm/RegisterLawFirm";
 import ProvidersDash from "./Components/ProvidersDash";
 import RegistrationSuccess from "./Components/Registration/Provider/RegisterationSuccess";
+import RequestAppointment from "./Components/RequestAppointment";
 function App() {
   return (
     <div className="flex flex-col w-full">
@@ -33,8 +34,6 @@ function App() {
           path="/advocates"
           element={
             <ServiceProviderList
-              searchName="Advocates"
-              searchLocation="Bangalore"
               list={AdvocatesList}
               providerType="advocates"
             />
@@ -44,11 +43,45 @@ function App() {
         <Route
           path="/law-firms"
           element={
+            <ServiceProviderList list={LawFirmsList} providerType="law-firms" />
+          }
+        />
+        <Route
+          path="/law-firms"
+          element={
+            <ServiceProviderList list={LawFirmsList} providerType="law-firms" />
+          }
+        />
+        <Route
+          path="/arbitrators"
+          element={
+            <ServiceProviderList list={LawFirmsList} providerType="law-firms" />
+          }
+        />
+        <Route
+          path="/notaries"
+          element={
+            <ServiceProviderList list={LawFirmsList} providerType="law-firms" />
+          }
+        />
+        <Route
+          path="/mediators"
+          element={
+            <ServiceProviderList list={LawFirmsList} providerType="law-firms" />
+          }
+        />
+        <Route
+          path="/deed-writers"
+          element={
+            <ServiceProviderList list={LawFirmsList} providerType="law-firms" />
+          }
+        />
+        <Route
+          path="/tax-consultants"
+          element={
             <ServiceProviderList
-              searchName="Law Firms"
-              searchLocation="Bangalore"
-              list={LawFirmsList}
-              providerType="law-firms"
+              list={AdvocatesList}
+              providerType="advocates"
             />
           }
         />
@@ -69,6 +102,9 @@ function App() {
         <Route path="/LawFirmRegister" element={<RegisterLawFirm />} />
         <Route path="/ProviderDash" element={<ProvidersDash />} />
         <Route path="/not-found" element={<NotFound404 />} />
+
+        <Route path="/request-appointment" element={<RequestAppointment />} />
+        <Route path="/success" element={<RegistrationSuccess />} />
 
         <Route path="*" element={<NotFound404 />} />
       </Routes>
