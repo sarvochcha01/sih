@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CalendarDateCard from "./CalendarDateCard";
 import TimeSlot from "./TimeSlot";
+import { Link } from "react-router-dom";
 
 const Calender = (props) => {
   const [calDate, setDate] = useState({});
@@ -74,17 +75,20 @@ const Calender = (props) => {
           </div>
         </div>
       </div>
-      <div
-        className="ok flex justify-center self-end text-white bg-sky-700 w-16 hover:cursor-pointer"
-        onClick={() => {
-          Object.keys(calDate).length === 0 || Object.keys(calTime).length === 0
-            ? console.log("Select a time")
-            : console.log(dateTime);
-          console.log(props.id);
-        }}
-      >
-        OK
-      </div>
+      <Link to="/request-appointment">
+        <div
+          className="ok flex justify-center self-end text-white bg-sky-700 w-16 hover:cursor-pointer"
+          onClick={() => {
+            Object.keys(calDate).length === 0 ||
+            Object.keys(calTime).length === 0
+              ? console.log("Select a time")
+              : console.log(dateTime);
+            console.log(props.id);
+          }}
+        >
+          OK
+        </div>
+      </Link>
     </div>
   );
 };
