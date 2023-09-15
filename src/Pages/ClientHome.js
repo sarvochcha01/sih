@@ -7,9 +7,13 @@ import authentication from "../Authentication/authentication";
 import api from "../Authentication/apiAddress";
 import axios from "axios";
 import { useEffect } from "react";
+import fetchAvailability from "../Appointments/FetchData";
 
 const ClientHome = () => {
   const clientOrProvider = () => {
+
+    //fetchAvailability();
+
     let values = authentication();
     if (values.authenticated) {
       axios
@@ -23,8 +27,8 @@ const ClientHome = () => {
         });
     }
   };
-
   useEffect(() => {
+    fetchAvailability()
     if (localStorage.getItem("WhoIsHe") === "") clientOrProvider();
   }, []);
 

@@ -20,6 +20,7 @@ const ProviderDocUpload =(props)=>{
     const handleSubmitDetails = () => {
         //let clientOrProvider = localStorage.getItem("clientOrProvider")
         let typeOfProvider = localStorage.getItem("typeOfProvider")
+        let providerWorkLocation = localStorage.getItem("providerWorkLocation")
         let providerPersonalInfo = 
         {
             "providerFullName" : localStorage.getItem("providerFullName"),
@@ -47,7 +48,7 @@ const ProviderDocUpload =(props)=>{
             "providerPassingYear2":localStorage.getItem("providerPassingYear2")
         } 
 
-        let providerInformation = {typeOfProvider, providerPersonalInfo, providerEducationalInfo, providerProfessionalInfo}
+        let providerInformation = {typeOfProvider, providerPersonalInfo, providerEducationalInfo, providerProfessionalInfo, providerWorkLocation}
         console.log(providerInformation)
 
         //AXIOS PUSH TO DATABASE
