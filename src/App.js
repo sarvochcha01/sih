@@ -18,8 +18,10 @@ import jwtDecode from "jwt-decode";
 
 import RegisterProvider from "./Components/Registration/Provider/RegisterProvider";
 import UserSelection from "./Components/UserSelection";
-import SelectUser from "./Components/SelectUser";
+
 import Registerclient from "./Components/Registration/Client/Registerclient";
+import RegisterLawFirm from "./Components/Registration/Provider/RegisterLawFirm";
+import ProvidersDash from "./Components/ProvidersDash";
 function App() {
   return (
     <div className="flex flex-col w-full">
@@ -56,7 +58,7 @@ function App() {
         <Route path="/providerRegister" element={<RegisterProvider />} />
         <Route path="/UserSelection" element={<UserSelection />} />
         <Route path="/clientRegister" element={<Registerclient />} />
-        <Route path="/Select" element={<SelectUser />} />
+        
 
         <Route path="/providerRegister" element={<RegisterProvider/>} />
 
@@ -64,7 +66,8 @@ function App() {
 
         <Route path="/UserSelection" element={<UserSelection/>} />
         <Route path="/clientRegister" element={<Registerclient/>} />
-        <Route path="/Select" element={<SelectUser/>} />
+        <Route path="/LawFirmRegister" element={<RegisterLawFirm/>} /> 
+        <Route path="/ProviderDash" element={<ProvidersDash/>} />        
         <Route path="/not-found" element={<NotFound404/>} />
 
         <Route path="*" element={<NotFound404 />} />

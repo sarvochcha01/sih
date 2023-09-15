@@ -61,7 +61,7 @@ const UserSelection =()=>{
                 </div>
             </div>
                 <form>
-                    {lwrtype && <div className=" bg-gray-100 flex flex-col w-64 p-8 border-b-2 border-r-2 border-slate-400 mx-auto mt-4 rounded-sm shadow-lg shadow-slate-400">
+                    {lwrtype && <div className="0 bg-gray-100 flex flex-col w-64 p-8 border-b-2 border-r-2 border-slate-400 mx-auto mt-4 rounded-sm shadow-lg shadow-slate-400">
                         <div>
                             <input className="h-3 w-3 " type="radio" id="h3" name="fav_language" value="Lawyer"
                             onChange={(e) => handleTypeOfProvider(e)}
