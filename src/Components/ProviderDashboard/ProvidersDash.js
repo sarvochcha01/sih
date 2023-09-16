@@ -7,6 +7,7 @@ import authentication from "../../Authentication/authentication";
 import api from "../../Authentication/apiAddress";
 import { useEffect, useState } from "react";
 import Calender from "../Calendar";
+import { Link } from "react-router-dom";
 
 const ProvidersDash = () => {
   let arrPendingName = [];
@@ -174,9 +175,9 @@ const ProvidersDash = () => {
         </div>
         <div className=" h-3/5 py-2 px-3 mx-3 flex flex-col md:flex-row md:justify-evenly md:pr-6">
           <div className="bg-white rounded-lg shadow-md shadow-slate-300  md:w-96">
-            <div className="bg-blue-800 w-full p-2 pl-4 h-12 rounded-t-lg text-lg font-semibold text-gray-200">
+          <Link to = "/AppRequest"><div className="bg-blue-800 w-full p-2 pl-4 h-12 rounded-t-lg text-lg font-semibold text-gray-200">
               Appointment Requests
-            </div>
+            </div></Link>
             <div className="overflow-auto flex flex-col h-72 scrollbar-hide mt-2">
             {Object.keys(JSON.parse(localStorage.getItem("requestData"))).map((key, index) => (
               //console.log("key : " + (new Date(JSON.parse(localStorage.getItem("requestData"))[key].date._seconds * 1000 ).toString()))

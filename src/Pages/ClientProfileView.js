@@ -87,12 +87,12 @@ const ClientProfileView = () => {
             </div>
           </div>
           <div className="username flex flex-col lg:flex-row lg:justify-between lg:px-8 w-full">
-            <div className="label-text text-xl font-bold pl-4 pt-4 lg:pt-8 lg:w-2/4 ">
+            {/* <div className="label-text text-xl font-bold pl-4 pt-4 lg:pt-8 lg:w-2/4 ">
               Username:
-            </div>
-            <div className="text text-lg font-semibold text-gray-500 pl-4 lg:pt-8 lg:w-2/4">
+            </div> */}
+            {/* <div className="text text-lg font-semibold text-gray-500 pl-4 lg:pt-8 lg:w-2/4">
               @DEKHTE HAI SHD DO
-            </div>
+            </div> */}
           </div>
           <div className="contact-no flex flex-col lg:flex-row lg:justify-between lg:px-8 w-full">
             <div className="label-text text-xl font-bold pl-4 pt-4 lg:pt-8 lg:w-2/4 ">

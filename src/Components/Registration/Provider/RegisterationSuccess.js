@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const RegistrationSuccess =()=>{
     const navigate = useNavigate()
     const goHome = () => {
-        navigate("/ProviderDash")
+        navigate("/ClientHome")
     }
 
     return(
@@ -12,7 +12,7 @@ const RegistrationSuccess =()=>{
             <div className="msg bg-white m-10 p-10 font-mono text-lg rounded-xl ">You Have Successfully Completed registration.<br/>
                                 <br/>Now you are an important member of eLegal.</div>
             <div className="home flex justify-center" onClick={() => goHome()}>
-                <p className="bg-sky-300 p-2 mb-3 rounded-lg font-bold border-2 border-slate-600 w-min">Dashboard</p>
+                <p className="bg-sky-300 p-2 mb-3 rounded-lg font-bold border-2 border-slate-600 w-min">Home</p>
             </div>
         </div>
     );

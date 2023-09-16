@@ -118,7 +118,7 @@ const Registerclient = () => {
                 </div>
                 <div className="value basis-7/12 ">
                   <input
-                    className="rounded-md border-2 border-slate-700 h-8  sm:h-full w-full float-right"
+                    className="rounded-md border-2 p-2 border-slate-700 h-8  sm:h-full w-full float-right"
                     onChange={(e) => handleFullName(e)}
                     value={localStorage.getItem("clientFullName")}
                   />
@@ -135,7 +135,7 @@ const Registerclient = () => {
                   <input
                     type="number"
                     pattern="[0-9]{10}"
-                    className="rounded-md border-2 border-slate-700 h-8  w-full float-right sm:h-full "
+                    className="rounded-md border-2 p-2 border-slate-700 h-8  w-full float-right sm:h-full "
                     onChange={(e) => handleContact(e)}
                     value={localStorage.getItem("clientContact")}
                   />
@@ -151,7 +151,7 @@ const Registerclient = () => {
                 <div className="value  basis-7/12">
                   <input
                     type="email"
-                    className="rounded-md border-2 border-slate-700 h-8  w-full float-right sm:h-full "
+                    className="rounded-md border-2 p-2 border-slate-700 h-8  w-full float-right sm:h-full "
                     onChange={(e) => handleEmail(e)}
                     value={localStorage.getItem("clientEmail")}
                   />
@@ -167,7 +167,7 @@ const Registerclient = () => {
                 <div className="value basis-7/12">
                   <input
                     type="date"
-                    className="rounded-md border-2 border-slate-700 h-8  w-full float-right sm:h-full "
+                    className="rounded-md p-2 border-2 border-slate-700 h-8  w-full float-right sm:h-full "
                     onChange={(e) => handleDob(e)}
                     value={localStorage.getItem("clientDob")}
                   />
@@ -182,7 +182,7 @@ const Registerclient = () => {
                 </div>
                 <div className="value  basis-7/12 py-3 sm:py-0">
                   <input
-                    className="rounded-md border-2 border-slate-700 h-8  w-full float-right sm:h-full"
+                    className="rounded-md p-2 border-2 border-slate-700 h-8  w-full float-right sm:h-full"
                     onChange={(e) => handleLanguages(e)}
                     value={localStorage.getItem("clientLanguages")}
                   />
@@ -197,7 +197,7 @@ const Registerclient = () => {
                 </div>
                 <div className="value  basis-7/12">
                   <select
-                    className="rounded-md border-2 border-slate-700 h-8  w-full float-right sm:h-full "
+                    className="rounded-md border-2 pl-2 border-slate-700 h-8  w-full float-right sm:h-full "
                     onChange={(e) => handleGender(e)}
                     value={localStorage.getItem("clientGender")}
                   >
@@ -217,7 +217,7 @@ const Registerclient = () => {
                 </div>
                 <div className="value basis-7/12">
                   <textarea
-                    className="rounded-md border-2 border-slate-700 h-8 w-full float-right  sm:h-20 overflow-auto"
+                    className="rounded-md border-2 pl-2 border-slate-700 h-8 w-full float-right  sm:h-20 overflow-auto"
                     onChange={(e) => handleAddress(e)}
                     value={localStorage.getItem("clientAddress")}
                   />
