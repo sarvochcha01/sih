@@ -3,116 +3,97 @@ import Dashnav from "./Dashnav";
 import Requests from "./DashRequests";
 import DashUpcomingApntmnt from "./DashUpcomingApntmnt";
 import axios from "axios";
-import authentication from "../Authentication/authentication";
-import api from "../Authentication/apiAddress";
+import authentication from "../../Authentication/authentication";
+import api from "../../Authentication/apiAddress";
 import { useEffect, useState } from "react";
-import Calender from "./Calendar";
+import Calender from "../Calendar";
 
 const ProvidersDash = () => {
+  let arrPendingName = [];
+  const [arrName, setArrName] = useState("");
+  let arrPendingSubject = [];
+  let arrPendingDescription = [];
 
-        
-    let arrPendingName=[]
-    const [arrName, setArrName] = useState("")
-    let arrPendingSubject=[]
-    let arrPendingDescription=[]
-
-    let arrAcceptedName=[]
-    let arrAcceptedSubject=[]
-    let arrAcceptedDescription=[]
-    const [requestData, setRequestData] = useState({})
-    const [abc, setAbc] = useState(0)
-    const fetchPendingCases = () => {
-        
-        let values = authentication()
-        if(values.authenticated){
-            let id = localStorage.getItem("ProviderUID")
-            axios.post(`${api}/fetchPendingRequests`, {"providerUID": id})
-            .then((doc)=>{
-                
-                
-
-                //setRequestData(doc.data)
-                // arrPendingName=[]
-                // let arrPendingSubject=[]
-                // let arrPendingDescription=[]
-                //console.log(requestData)
-                for(var i in requestData){
-                    setArrName(requestData[i].caseDetails.fullName)
-                    arrPendingName.push(requestData[i].caseDetails.fullName)
-                    arrPendingSubject.push(requestData[i].caseDetails.subject)
-                    arrPendingDescription.push(requestData[i].caseDetails.description)
-                }
-                // console.log(arrPendingName)
-                // console.log(arrPendingSubject)
-                // console.log(arrPendingDescription)
-                // console.data(requestData)
-                
-            })
-            .catch(err => {
-                console.log("SADGlE")
-            })
-            
-        }
-        else{
-            console.log("Signed out")
-        }
-        
-        
+  let arrAcceptedName = [];
+  let arrAcceptedSubject = [];
+  let arrAcceptedDescription = [];
+  const [requestData, setRequestData] = useState({});
+  const [abc, setAbc] = useState(0);
+  const fetchPendingCases = () => {
+    let values = authentication();
+    if (values.authenticated) {
+      let id = localStorage.getItem("ProviderUID");
+      axios
+        .post(`${api}/fetchPendingRequests`, { providerUID: id })
+        .then((doc) => {
+          //setRequestData(doc.data)
+          // arrPendingName=[]
+          // let arrPendingSubject=[]
+          // let arrPendingDescription=[]
+          //console.log(requestData)
+          for (var i in requestData) {
+            setArrName(requestData[i].caseDetails.fullName);
+            arrPendingName.push(requestData[i].caseDetails.fullName);
+            arrPendingSubject.push(requestData[i].caseDetails.subject);
+            arrPendingDescription.push(requestData[i].caseDetails.description);
+          }
+          // console.log(arrPendingName)
+          // console.log(arrPendingSubject)
+          // console.log(arrPendingDescription)
+          // console.data(requestData)
+        })
+        .catch((err) => {
+          console.log("SADGlE");
+        });
+    } else {
+      console.log("Signed out");
     }
-    const fetchAcceptedCases = () => {
-        
-        let values = authentication()
-        if(values.authenticated){
-            axios.post(`${api}/fetchAcceptedRequests`, {"providerUID": localStorage.getItem("ProviderUID")})
-            .then((doc)=>{
-                
-                //setRequestData(doc.data)
-                arrPendingName=[]
-                let arrAcceptedSubject=[]
-                let arrAcceptedDescription=[]
-                for(var i in requestData){
-                    arrAcceptedName.push(requestData[i].caseDetails.fullName)
-                    arrAcceptedSubject.push(requestData[i].caseDetails.subject)
-                    arrAcceptedDescription.push(requestData[i].caseDetails.description)
-                }
-                console.log("Hello"+arrPendingName)
-                console.log("Hello"+arrPendingSubject)
-                console.log("Hello"+arrPendingDescription)
-                console.data(requestData)
-                
-            })
-            .catch(err => {
-                console.log("SADGE")
-            })
-            
-        }
-        
-        
+  };
+  const fetchAcceptedCases = () => {
+    let values = authentication();
+    if (values.authenticated) {
+      axios
+        .post(`${api}/fetchAcceptedRequests`, {
+          providerUID: localStorage.getItem("ProviderUID"),
+        })
+        .then((doc) => {
+          //setRequestData(doc.data)
+          arrPendingName = [];
+          let arrAcceptedSubject = [];
+          let arrAcceptedDescription = [];
+          for (var i in requestData) {
+            arrAcceptedName.push(requestData[i].caseDetails.fullName);
+            arrAcceptedSubject.push(requestData[i].caseDetails.subject);
+            arrAcceptedDescription.push(requestData[i].caseDetails.description);
+          }
+          console.log("Hello" + arrPendingName);
+          console.log("Hello" + arrPendingSubject);
+          console.log("Hello" + arrPendingDescription);
+          console.data(requestData);
+        })
+        .catch((err) => {
+          console.log("SADGE");
+        });
     }
+  };
 
-    useEffect(()=>{
-        let values = authentication()
-        console.log("Heloooooo")
-        if(values.authenticated){
-            let id = localStorage.getItem("ProviderUID")
-            axios.post(`${api}/fetchPendingRequests`, {"providerUID": id})
-            .then((doc)=>{
-                console.log(doc.data)               
-            })
-            .catch(err => {
-                console.log("SADGlE")
-            })
-            
-        }
-        else{
-            console.log("Signed out")
-        }
-
-
-    },[])  
-
-    
-
+  useEffect(() => {
+    let values = authentication();
+    console.log("Heloooooo");
+    if (values.authenticated) {
+      let id = localStorage.getItem("ProviderUID");
+      axios
+        .post(`${api}/fetchPendingRequests`, { providerUID: id })
+        .then((doc) => {
+          console.log(doc.data);
+        })
+        .catch((err) => {
+          console.log("SADGlE");
+        });
+    } else {
+      console.log("Signed out");
+    }
+  }, []);
 
   return (
     <div className="flex flex-col xl:flex-row h-full w-full ">
@@ -128,7 +109,7 @@ const ProvidersDash = () => {
               width="100%"
             />
             <div className="bg-white w-full flex flex-col justify-center">
-              <div className=" text-2xl text-center font-bold" >
+              <div className=" text-2xl text-center font-bold">
                 Good Day Mr. Himanshu{" "}
               </div>
               <div className="text-slate-700 text-center text-[15px] font-semibold">
@@ -141,7 +122,6 @@ const ProvidersDash = () => {
               Profile
             </div>
             <DashProfile
-            
               img="https://shorturl.at/uHKT3"
               name="Himanshu Yadav"
               num="+91 9898989811"
@@ -154,10 +134,7 @@ const ProvidersDash = () => {
             <div className="bg-blue-800 w-full p-2 pl-4 h-12 rounded-t-lg text-lg font-semibold text-gray-200">
               Appointment Requests
             </div>
-            <div className="overflow-auto flex flex-col h-72 scrollbar-hide mt-2">
-                
-              
-            </div>
+            <div className="overflow-auto flex flex-col h-72 scrollbar-hide mt-2"></div>
           </div>
           <div className=" bg-white mt-4 md:mt-0 rounded-lg shadow-lg shadow-slate-300 md:w-96 mb-4">
             <div className="bg-blue-800 w-full h-12 rounded-t-lg text-lg font-semibold text-gray-200 p-2 pl-4">
@@ -178,8 +155,8 @@ const ProvidersDash = () => {
                 date="12 Aug 2023"
                 time="10:00 AM"
               />
-              
-              <DashUpcomingApntmnt 
+
+              <DashUpcomingApntmnt
                 img="https://shorturl.at/mO026"
                 name="Sarvochcha Sharma"
                 case="Murder Case"

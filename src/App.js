@@ -15,6 +15,7 @@ import TaxConsultantsList from "./Data/TaxConsultants.json";
 
 import ServiceProviderProfile from "./Pages/ServiceProviderProfile";
 import NotFound404 from "./Components/NotFound404";
+import ProvidersDash from "./Components/ProviderDashboard/ProvidersDash";
 
 import Signinup from "./Components/Signinup";
 import jwtDecode from "jwt-decode";
@@ -25,7 +26,6 @@ import RegisterProvider from "./Components/Registration/Provider/Lawyer/Register
 import UserSelection from "./Components/UserSelection";
 import Registerclient from "./Components/Registration/Client/Registerclient";
 import RegisterLawFirm from "./Components/Registration/Provider/LawFirm/RegisterLawFirm";
-import ProvidersDash from "./Components/ProviderDashboard/ProvidersDashAS";
 import RegistrationSuccess from "./Components/Registration/Provider/RegisterationSuccess";
 import Appointment from "./Components/ProviderDashboard/Appointment";
 import AppointmentRequest from "./Components/ProviderDashboard/AppointmentRequest";
