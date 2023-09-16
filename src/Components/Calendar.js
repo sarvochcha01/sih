@@ -3,6 +3,9 @@ import CalendarDateCard from "./CalendarDateCard";
 import TimeSlot from "./TimeSlot";
 import getProviderUID from "../Appointments/GetProviderUID";
 import { useNavigate } from "react-router";
+import api from "../Authentication/apiAddress";
+import authentication from "../Authentication/authentication";
+import axios from "axios";
 
 const Calender = (props) => {
   const [calDate, setDate] = useState({});
@@ -15,7 +18,23 @@ const Calender = (props) => {
   const [dateTime, setDateTime] = useState("");
 
   useEffect(() => {
-    //getProviderUID({"handle": props.id})
+    
+    console.log(props.id)
+    let values = authentication()
+    if(values.authenticated){
+        //GET PROVIDER UID
+        axios.post(`${api}/getProviderUID`, {"handle": props.id})
+        .then(doc => {
+            console.log(doc.data.handle)
+            localStorage.setItem("ProviderUID", doc.data.handle )
+        })
+        .catch(err=>{
+            console.log("SADGE")
+        })
+
+
+        //REQUEST APPOINTMENT
+    }
 
     setDateTime(
       `${calDate.year}-${calDate.month}-${calDate.day}T${calTime.hour}:${calTime.minute}:${calTime.second}.000Z`
@@ -100,6 +119,7 @@ const Calender = (props) => {
               : navigate("/request-appointment", {
                   state: { date: calDate, time: calTime },
                 });
+                localStorage.setItem("dateTime", dateTime)
             console.log(props.id);
             setTimeout(() => {
               setNotif("");

@@ -10,7 +10,7 @@ const ServiceProviderProfileCard = (props) => {
       </div>
       <div className="details flex flex-col lg:mt-12 lg:w-3/5 w-full">
         <div className="name text-card-btn text-2xl font-bold flex w-full  justify-center lg:justify-start">
-          Adv. Manish Suresh {props.id}
+          Adv. Manish Suresh
         </div>
         <div className="specialise font-extrabold text-center lg:text-left flex w-full justify-center lg:justify-start text-lg lg:pr-20 mt-2">{`Specialises in personal injury, corporate and family disputes`}</div>
         <div className="experience flex w-full justify-center lg:justify-start text-md">{`6.9 years of experience`}</div>
