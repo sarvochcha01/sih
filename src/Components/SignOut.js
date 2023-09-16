@@ -14,6 +14,7 @@ const HandleSignOut = () => {
         const FBIdToken = `Bearer `; //Manish
         localStorage.setItem("FBIdToken", FBIdToken); //Manish
         localStorage.setItem("WhoIsHe", "")
+        localStorage.setItem("UserDetails", "")
         console.log(res.data);
         window.location.reload();
       })

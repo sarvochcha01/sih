@@ -78,22 +78,42 @@ const ProvidersDash = () => {
   };
 
   useEffect(() => {
+    
+
+
     let values = authentication();
+
     console.log("Heloooooo");
+    console.log(values)
     if (values.authenticated) {
+      localStorage.setItem("ProviderUID", values.decodedToken.user_id)
       let id = localStorage.getItem("ProviderUID");
       axios
-        .post(`${api}/fetchPendingRequests`, { providerUID: id })
+        .post(`${api}/fetchPendingRequests`, { "providerUID": id })
         .then((doc) => {
+          //setRequestData(doc.data)
           console.log(doc.data);
+          localStorage.setItem("requestData", JSON.stringify(doc.data))
+
         })
         .catch((err) => {
+
           console.log("SADGlE");
         });
     } else {
       console.log("Signed out");
     }
-  }, []);
+  });
+
+
+
+  // const parseUserData =()=>{
+  //   const docData = JSON.parse(localStorage.getItem("UserDetails"))
+  //   console.log(docData)
+  //   JSON.parse(localStorage.getItem("UserDetails")).providerInformation.providerPersonalInfo.providerFullName
+  //     return docData.providerInformation.providerPersonalInfo.providerFullName
+    
+  // }
 
   return (
     <div className="flex flex-col xl:flex-row h-full w-full ">
@@ -122,10 +142,11 @@ const ProvidersDash = () => {
               Profile
             </div>
             <DashProfile
+            
               img="https://shorturl.at/uHKT3"
-              name="Himanshu Yadav"
-              num="+91 9898989811"
-              email="himanshuyadav123@gmail.com"
+              name={JSON.parse(localStorage.getItem("UserDetails")).providerInformation.providerPersonalInfo.providerFullName}
+              num={JSON.parse(localStorage.getItem("UserDetails")).providerInformation.providerPersonalInfo.providerContact}
+              email={JSON.parse(localStorage.getItem("UserDetails")).providerInformation.providerPersonalInfo.providerEmail}
             />
           </div>
         </div>

@@ -20,6 +20,7 @@ const ClientHome = () => {
         .then((data) => {
           //setFetchedData(data.data.data.clientPersonalInfo)
           localStorage.setItem("WhoIsHe", data.data.whoishe);
+          localStorage.setItem("UserDetails", JSON.stringify(data.data.UserDetails));
         })
         .catch((err) => {
           console.log("sadge");

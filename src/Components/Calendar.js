@@ -14,6 +14,9 @@ const Calender = (props) => {
   const [dateTime, setDateTime] = useState("");
 
   useEffect(() => {
+
+    //getProviderUID({"handle": props.id})
+
     setDateTime(
       `${calDate.year}-${calDate.month}-${calDate.day}T${calTime.hour}:${calTime.minute}:${calTime.second}.000Z`
       
