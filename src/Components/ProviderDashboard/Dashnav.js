@@ -8,7 +8,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { BsCalendar3 } from "react-icons/bs";
 import { MdOutlineEventAvailable } from "react-icons/md";
-import HandleSignOut from "./SignOut";
+import HandleSignOut from "../SignOut";
 import { Link, useNavigate } from "react-router-dom";
 const Dashnav = () => {
   let naviagte = useNavigate();

@@ -54,20 +54,13 @@ const LawFirmProfessionalInfo =(props)=>{
                             <div className="contact flex  justify-between sm:h-9 mt-3 mb-2">
                                 <div className="title  lg:basis-4/12 basis-1/2"><label className=" text-white font-semibold lg:text-md text-md">Area of Practices :</label></div>
                                 <div className="value basis-6/12">
-                                <input type="number" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "
+                                <input type="text" className="rounded-xl border-2 p-2 border-slate-700 h-8  w-full float-right sm:h-full "
                                 onChange={(e) => handleYearsOfExperience(e)}
                                 value={localStorage.getItem("providerYearsOfExperience")}
                                 /></div>
                             </div>
 
-                            <div className="email flex  justify-between sm:h-9 mt-3 mb-2">
-                                <div className="title lg:basis-4/12 basis-1/2"><label className="text-white font-semibold lg:text-md text-md">Law Firm(if any):</label></div>
-                                <div className="value  basis-6/12">
-                                <input type="email" className="rounded-xl border-2 border-slate-700 h-8  w-full float-right sm:h-full "
-                                onChange={(e) => handleLawFirm(e)}
-                                value={localStorage.getItem("providerLawFirm")}
-                                /></div>
-                            </div>
+                            
 
                             <div className="DOB flex  justify-between sm:h-9 mt-3 mb-2">
                                 <div className="title  lg:basis-4/12 basis-1/2"><label className="text-white font-semibold text-md">Work Location:</label></div>
@@ -128,7 +121,7 @@ const LawFirmProfessionalInfo =(props)=>{
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-center space-x-6  my-2">
+                    <div className="flex justify-center space-x-6  my-2"            >
                 <input onClick={() => props.pfun()} type="button" value="Back" className="bg-gray-300 border-2 border-slate-400 rounded-lg w-24 md:w-24 h-10 text-xl font-extrabold md:mr-20"/>
                 <input type="submit" onClick={() => props.nfun()} value="Next" className="bg-sky-300 border-2 border-slate-400 w-24 h-10 text-xl rounded-lg font-extrabold md:w-24 md:ml-20"/>
                 </div>

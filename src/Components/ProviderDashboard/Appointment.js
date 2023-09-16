@@ -23,7 +23,7 @@ const Appointment =()=>{
                 </div>
                 <div className="flex lg:flex-row-reverse flex-col-reverse">
                     <AppointmentUpcoming 
-                    descript="qwerty"
+                    descript="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut tempor nisl. Nullam nulla elit, viverra et faucibus eu, iaculis eu dolor. Aenean ultricies sagittis nisi, sed hendrerit nunc scelerisque in. Phasellus a lacinia quam. Maecenas pharetra nibh auctor mauris.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget porta velit. Quisque eleifend lectus eget tincidunt cursus. Nunc id risus sed urna vehicula dignissim.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     img="https://shorturl.at/mtuV0" 
                     name="Divyansh Yaduvanshi" 
                     case="Criminal Case" 

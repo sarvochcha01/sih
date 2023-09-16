@@ -93,7 +93,7 @@ const LawFrimPersonalinfo =(props)=>{
                             </div>
 
                             <div className="DOB flex  justify-between sm:h-9 mt-3">
-                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Establishment Year:</label></div>
+                                <div className="title  basis-4/12"><label className="text-white font-bold text-md">Establishment Date:</label></div>
                                 <div className="value basis-7/12">
                                 <input type="date"name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-11/12 md:w-9/12 float-right sm:h-full "
                                 onChange={(e) => handleDob(e)}
@@ -113,15 +113,11 @@ const LawFrimPersonalinfo =(props)=>{
                             <div className="Gender flex justify-between sm:h-9 mt-3">
                                 <div className="title  basis-4/12"><label className="text-white font-bold text-md">Website:</label></div>
                                 <div className="value  basis-7/12">
-                                <select name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-11/12 md:w-9/12 float-right sm:h-full "
+                                <input name="fullname" className="px-2 rounded-md border-2 border-slate-700 h-8  w-11/12 md:w-9/12 float-right sm:h-full "
                                 onChange={(e) => handleGender(e)}
                                 value={localStorage.getItem("providerGender")}
                                 >
-                                <option value="Gender">Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option> 
-                                <option value="Others">Others</option>   
-                                </select></div>
+                                </input></div>
                             </div>
 
                             <div className="address flex  justify-between sm:h-9 mt-3">

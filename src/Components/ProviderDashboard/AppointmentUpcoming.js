@@ -17,7 +17,10 @@ const AppointmentUpcoming =(props)=>{
                 <div className="bg-white w-7/12 flex flex-col justify-center pl-1 lg:pl-4">
                     <div className="h-1/4 flex items-center text-blue-950 font-semibold lg:font-bold text-[16px] lg:text-2xl">{props.name}</div>
                     <div className=" text-sm lg:text-xs lg:mb-1">{props.case}</div>  
-                    <span className=" bg-gray-600 rounded-sm shadow-md text-xs w-max p-2 font-bold hover:font-extrabold" onClick={()=>{props.Obox()}}>Case Description<br/></span> 
+                    <p className=" text-xs font-bold pt-2">Case Description<br/></p>   
+                        <div className="h-1/2 overflow-hidden lg:flex flex-col  hidden">
+                            <p className=" text-sm pt-2 flex">{props.descript}</p>
+                        </div> 
                     </div>
                 <div className="w-0 lg:w-2/12"></div>
                 <div className=" w-3/12 flex flex-col justify-center">
