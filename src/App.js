@@ -7,6 +7,11 @@ import ServiceProviderList from "./Pages/ServiceProviderList";
 
 import AdvocatesList from "./Data/Advocates.json";
 import LawFirmsList from "./Data/LawFirmsList.json";
+import ArbitratorsList from "./Data/Arbitrators.json";
+import MediatorsList from "./Data/Mediators.json";
+import NotariesList from "./Data/Notaries.json";
+import DeedWritersList from "./Data/DeedWriters.json";
+import TaxConsultantsList from "./Data/TaxConsultants.json";
 
 import ServiceProviderProfile from "./Pages/ServiceProviderProfile";
 import NotFound404 from "./Components/NotFound404";
@@ -57,32 +62,41 @@ function App() {
         <Route
           path="/arbitrators"
           element={
-            <ServiceProviderList list={LawFirmsList} providerType="law-firms" />
+            <ServiceProviderList
+              list={ArbitratorsList}
+              providerType="law-firms"
+            />
           }
         />
         <Route
           path="/notaries"
           element={
-            <ServiceProviderList list={LawFirmsList} providerType="law-firms" />
+            <ServiceProviderList list={NotariesList} providerType="law-firms" />
           }
         />
         <Route
           path="/mediators"
           element={
-            <ServiceProviderList list={LawFirmsList} providerType="law-firms" />
+            <ServiceProviderList
+              list={MediatorsList}
+              providerType="law-firms"
+            />
           }
         />
         <Route
           path="/deed-writers"
           element={
-            <ServiceProviderList list={LawFirmsList} providerType="law-firms" />
+            <ServiceProviderList
+              list={DeedWritersList}
+              providerType="law-firms"
+            />
           }
         />
         <Route
           path="/tax-consultants"
           element={
             <ServiceProviderList
-              list={AdvocatesList}
+              list={TaxConsultantsList}
               providerType="advocates"
             />
           }
@@ -98,8 +112,8 @@ function App() {
         <Route path="/providerRegister" element={<RegisterProvider />} />
 
         <Route path="/providerRegister" element={<RegisterProvider />} />
-        <Route path="/Appointment" element={<Appointment/>} />
-        <Route path="/AppRequest" element={<AppointmentRequest/>} />
+        <Route path="/Appointment" element={<Appointment />} />
+        <Route path="/AppRequest" element={<AppointmentRequest />} />
 
         <Route path="/UserSelection" element={<UserSelection />} />
         <Route path="/clientRegister" element={<Registerclient />} />

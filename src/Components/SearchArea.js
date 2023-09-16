@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SearchArea = () => {
   const [city, setCity] = useState("");
 
   const [cityList, setCityList] = useState([]);
+
+  const [serviceProviderType, setServiceProviderType] = useState("");
+
+  const navigate = useNavigate();
 
   const handleCityInput = (e) => {
     let searchQuery = e.charAt(0).toUpperCase() + e.slice(1);
@@ -73,12 +78,22 @@ const SearchArea = () => {
               Select a service:
             </label>
             <div>
-              <input
+              <select
                 id="serviceInput"
                 type="text"
                 className="w-full bg-slate-200 h-16 px-2 rounded-xl mt-2"
                 placeholder="Select a service"
-              />
+                onChange={(e) => setServiceProviderType(e.target.value)}
+              >
+                <option>Select a service</option>
+                <option value="advocates">Advocates</option>
+                <option value="arbitrators">Arbitrators</option>
+                <option value="deed-writers">Deed Writer</option>
+                <option value="law-firms">Law Firms</option>
+                <option value="mediators">Mediators</option>
+                <option value="notaries">Notaries</option>
+                <option value="tax-consultants">Tax Consultants</option>
+              </select>
             </div>
           </div>
           <div className="w-full lg:w-1/3 h-32  flex flex-col">
@@ -117,7 +132,10 @@ const SearchArea = () => {
               </div>
             )}
           </div>
-          <div className="w-40 lg:w-48 h-16 bg-navbar flex justify-center items-center self-center rounded-xl text-white text-xl lg:mt-5 hover:cursor-pointer hover:shadow-xl">
+          <div
+            className="w-40 lg:w-48 h-16 bg-navbar flex justify-center items-center self-center rounded-xl text-white text-xl lg:mt-5 hover:cursor-pointer hover:shadow-xl"
+            onClick={() => navigate(`/${serviceProviderType}`)}
+          >
             Find
           </div>
         </div>

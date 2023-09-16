@@ -11,7 +11,6 @@ import fetchAvailability from "../Appointments/FetchData";
 
 const ClientHome = () => {
   const clientOrProvider = () => {
-
     //fetchAvailability();
 
     let values = authentication();
@@ -28,7 +27,7 @@ const ClientHome = () => {
     }
   };
   useEffect(() => {
-    fetchAvailability()
+    fetchAvailability();
     if (localStorage.getItem("WhoIsHe") === "") clientOrProvider();
   }, []);
 
@@ -55,27 +54,41 @@ const ClientHome = () => {
               scale="100px"
             />
           </Link>
-          <Card
-            name="Arbitrators"
-            src="./img/logo/ArbitratorLogo.png"
-            scale="100px"
-          />
-          <Card name="Notaries" src="./img/logo/NotaryLogo.png" scale="55px" />
-          <Card
-            name="Mediators"
-            src="./img/logo/MediatorLogo.png"
-            scale="100px"
-          />
-          <Card
-            name="Deed Writers"
-            src="./img/logo/DocumentWriterLogo.png"
-            scale="70px"
-          />
-          <Card
-            name="Tax Consultants"
-            src="./img/logo/ConsultantLogo.png"
-            scale="100px"
-          />
+          <Link to="/arbitrators">
+            <Card
+              name="Arbitrators"
+              src="./img/logo/ArbitratorLogo.png"
+              scale="100px"
+            />
+          </Link>
+          <Link to="/notaries">
+            <Card
+              name="Notaries"
+              src="./img/logo/NotaryLogo.png"
+              scale="55px"
+            />
+          </Link>
+          <Link to="/mediators">
+            <Card
+              name="Mediators"
+              src="./img/logo/MediatorLogo.png"
+              scale="100px"
+            />
+          </Link>
+          <Link to="/deed-writers">
+            <Card
+              name="Deed Writers"
+              src="./img/logo/DocumentWriterLogo.png"
+              scale="70px"
+            />
+          </Link>
+          <Link to="/tax-consultants">
+            <Card
+              name="Tax Consultants"
+              src="./img/logo/ConsultantLogo.png"
+              scale="100px"
+            />
+          </Link>
         </CardContainer>
       </div>
     </div>
