@@ -10,12 +10,9 @@ const ProvidersDash = () =>{
     return(
         <div className="flex flex-col xl:flex-row h-full w-full ">
             <Dashnav/>
-            <Routes>
-            <Route path="/" element={<DashboardHome />} />
-            <Route path="/Appointment" element={<Appointment />} />
-            <Route path="/Appointment" element={<Appointment />} />
-            <Route path="/request" element={<RequestAppointment />} />
-            </Routes>
+            
+            <DashboardHome />
+           
         
         </div>
     );    
