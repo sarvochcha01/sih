@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const DashUpcomingApntmnt =(props)=>{
     return(
-        <Link to = "/AppRequest"><div className="bg-white border-r-2 border-b-2 border-slate-400 shadow-lg shadow-slate-300 flex h-auto m-2 p-2">
+        <Link to = "/AppHistory"><div className="bg-white border-r-2 border-b-2 border-slate-400 shadow-lg shadow-slate-300 flex h-auto m-2 p-2">
             <div className="  basis-1/5 flex justify-center items-center">
             <img src={props.img}  alt="P" className="bg-amber-700 h-10 rounded-full w-10" height="100%" width="100%"/>
             </div>
