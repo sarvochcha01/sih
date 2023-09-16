@@ -103,6 +103,27 @@ const ProvidersDash = () => {
     } else {
       console.log("Signed out");
     }
+
+    if (values.authenticated) {
+      //localStorage.setItem("ProviderUID", values.decodedToken.user_id)
+      let id = localStorage.getItem("ProviderUID");
+      axios
+        .post(`${api}/fetchAcceptedRequests`, { "providerUID": id })
+        .then((doc) => {
+          //setRequestData(doc.data)
+          console.log(doc.data);
+          localStorage.setItem("acceptedData", JSON.stringify(doc.data))
+
+        })
+        .catch((err) => {
+
+          console.log("SADGlE");
+        });
+    } else {
+      console.log("Signed out");
+    }
+
+
   });
 
 
@@ -155,13 +176,30 @@ const ProvidersDash = () => {
             <div className="bg-blue-800 w-full p-2 pl-4 h-12 rounded-t-lg text-lg font-semibold text-gray-200">
               Appointment Requests
             </div>
-            <div className="overflow-auto flex flex-col h-72 scrollbar-hide mt-2"></div>
+            <div className="overflow-auto flex flex-col h-72 scrollbar-hide mt-2">
+            {Object.keys(JSON.parse(localStorage.getItem("requestData"))).map((key, index) => (
+              //console.log("key : " + (new Date(JSON.parse(localStorage.getItem("requestData"))[key].date._seconds * 1000 ).toString()))
+                  <DashUpcomingApntmnt
+                  img="https://shorturl.at/zQZ03"
+                  
+                  name={JSON.parse(localStorage.getItem("requestData"))[key].caseDetails.fullName}
+                  case={JSON.parse(localStorage.getItem("requestData"))[key].caseDetails.subject}
+                  
+                  date={(new Date(JSON.parse(localStorage.getItem("requestData"))[key].date._seconds * 1000 ).toString().slice(0, -30))}
+                  time="2:00 PM"
+                />
+
+              ))}
+
+            </div>
           </div>
           <div className=" bg-white mt-4 md:mt-0 rounded-lg shadow-lg shadow-slate-300 md:w-96 mb-4">
             <div className="bg-blue-800 w-full h-12 rounded-t-lg text-lg font-semibold text-gray-200 p-2 pl-4">
               Upcoming Appointments
             </div>
             <div className="overflow-auto flex flex-col h-72 scrollbar-hide mt-2">
+              
+
               <DashUpcomingApntmnt
                 img="https://shorturl.at/zQZ03"
                 name={arrName[0]}
