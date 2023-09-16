@@ -35,6 +35,9 @@ const Signup = () => {
         const FBIdToken = `Bearer ${token}`; //Manish
         localStorage.setItem("FBIdToken", FBIdToken); //Manish
         axios.defaults.headers.common["Authorization"] = FBIdToken; //Manish
+
+        
+
         setCursorLoading(false);
         navigate("/userselection");
         window.location.reload();

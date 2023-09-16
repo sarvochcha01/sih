@@ -29,6 +29,7 @@ const ClientHome = () => {
   };
   useEffect(() => {
     fetchAvailability();
+    localStorage.setItem("requestData", "{}")
     if (localStorage.getItem("WhoIsHe") === "") clientOrProvider();
   }, []);
 
