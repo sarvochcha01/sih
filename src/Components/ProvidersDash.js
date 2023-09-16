@@ -91,17 +91,27 @@ const ProvidersDash = () => {
     }
 
     useEffect(()=>{
-        
-        if(abc > 4){
-            return
-            setAbc(abc + 1)
+        let values = authentication()
+        console.log("Heloooooo")
+        if(values.authenticated){
+            let id = localStorage.getItem("ProviderUID")
+            axios.post(`${api}/fetchPendingRequests`, {"providerUID": id})
+            .then((doc)=>{
+                console.log(doc.data)               
+            })
+            .catch(err => {
+                console.log("SADGlE")
+            })
+            
         }
-        console.log(abc)
-        console.log(arrName)
-       // fetchPendingCases()
-        //fetchAcceptedCases()
-        setAbc(abc+1)
-    },)  
+        else{
+            console.log("Signed out")
+        }
+
+
+    },[])  
+
+    
 
 
   return (
