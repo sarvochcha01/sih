@@ -5,23 +5,22 @@ import getProviderUID from "../Appointments/GetProviderUID";
 import { useNavigate } from "react-router";
 
 const Calender = (props) => {
-  
   const [calDate, setDate] = useState({});
   const [calTime, setTime] = useState({});
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [variableName, setVariableName] = useState("");
+
+  const [notif, setNotif] = useState("");
 
   const [dateTime, setDateTime] = useState("");
 
   useEffect(() => {
-
     //getProviderUID({"handle": props.id})
 
     setDateTime(
       `${calDate.year}-${calDate.month}-${calDate.day}T${calTime.hour}:${calTime.minute}:${calTime.second}.000Z`
-      
     );
-    
+
     setVariableName(
       `${calDate.year}-${calDate.month}-${calDate.day},${calTime.hour}:${calTime.minute}`
     );
@@ -57,7 +56,14 @@ const Calender = (props) => {
           setTime={setTime}
         />
       </div>
-      <div className="slot-area  w-full h-56 flex flex-col px-4 py-8 lg:py-4">
+      <div className="slot-area  w-full relative h-56 flex flex-col px-4 py-8 lg:py-4">
+        {notif === "" ? (
+          <div></div>
+        ) : (
+          <div className="error bg-red-600 text-white rounded-sm w-60 flex absolute mb-8 top-0 z-50 left-0 mx-auto right-0 justify-center text-center">
+            {notif}
+          </div>
+        )}
         <div className="morning flex flex-col h-1/3 w-full">
           <div className="text">Slots</div>
           <div className="slots flex flex-row gap-4 flex-wrap">
@@ -90,9 +96,14 @@ const Calender = (props) => {
           onClick={() => {
             Object.keys(calDate).length === 0 ||
             Object.keys(calTime).length === 0
-              ? console.log("Select a time")
-              : console.log(dateTime);
+              ? setNotif("Select a time")
+              : navigate("/request-appointment", {
+                  state: { date: calDate, time: calTime },
+                });
             console.log(props.id);
+            setTimeout(() => {
+              setNotif("");
+            }, 2000);
           }}
         >
           OK

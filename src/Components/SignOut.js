@@ -2,7 +2,6 @@ import axios from "axios";
 import api from "../Authentication/apiAddress";
 import authentication from "../Authentication/authentication";
 
-
 const HandleSignOut = () => {
   const values = authentication();
   if (values.authenticated) {
@@ -13,8 +12,8 @@ const HandleSignOut = () => {
 
         const FBIdToken = `Bearer `; //Manish
         localStorage.setItem("FBIdToken", FBIdToken); //Manish
-        localStorage.setItem("WhoIsHe", "")
-        localStorage.setItem("UserDetails", "")
+        localStorage.setItem("WhoIsHe", "");
+        localStorage.setItem("UserDetails", "{}");
         console.log(res.data);
         window.location.reload();
       })
