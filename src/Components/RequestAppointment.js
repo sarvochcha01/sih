@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
-const RequestAppointment = () => {
+const RequestAppointment = ({}) => {
+  const location = useLocation();
+  const data = location.state;
+  console.log(data);
+
   const [fullName, setFullName] = useState();
   const [mobile, setMobile] = useState();
   const [email, setEmail] = useState();
@@ -15,8 +20,14 @@ const RequestAppointment = () => {
           <div className="fee">500</div>
         </div>
         <div className="appointment-datetime flex flex-row w-full h-12  justify-between items-center px-4   ">
-          <div className="type">On Sep 28, 2023</div>
-          <div className="fee">At 06:00 PM</div>
+          <div className="day">
+            On
+            {` ${data.date.day}/${data.date.month}/${data.date.year}`}
+          </div>
+          <div className="time">
+            At
+            {` ${data.time.hour}:${data.time.minute}`}
+          </div>
         </div>
         <div className="lawyer-details flex flex-row w-full border-t-2 pt-2">
           <div className="img w-1/3 h-full   flex justify-center">
