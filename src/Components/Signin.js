@@ -28,6 +28,10 @@ const Signin = () => {
         const FBIdToken = `Bearer ${token}`; //Manish
         localStorage.setItem("FBIdToken", FBIdToken); //Manish
         axios.defaults.headers.common["Authorization"] = FBIdToken; //Manish
+
+
+
+
         setCursorLoading(false);
         navigate("/");
         window.location.reload();
@@ -40,7 +44,7 @@ const Signin = () => {
   };
 
   return (
-    <div className="h-full w-full flex flex-col relative justify-betwen bg-majblue rounded-b-3xl rounded-r-3xl">
+    <div className="h-full w-full flex flex-col relative justify-betwen bg-bluebg rounded-b-3xl rounded-r-3xl">
       {Object.keys(errorObject).length === 0 ? (
         <div></div>
       ) : (

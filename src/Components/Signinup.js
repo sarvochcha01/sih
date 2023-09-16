@@ -6,20 +6,20 @@ const Signinup = (props) => {
   // const[color1,changeclr]=useState("bg-bluebg ");
   const [state, changeState_signin] = useState(true);
   const [state2, changestate_signup] = useState(false);
-  const [color1, changeColor1] = useState("bg-majblue text-white");
+  const [color1, changeColor1] = useState("bg-bluebg text-white");
   const [color2, changecolor2] = useState("bg-white text-black");
 
   const signUp = () => {
     changeState_signin(false);
     changestate_signup(true);
     changeColor1("bg-white text-black");
-    changecolor2("bg-majblue text-white");
+    changecolor2("bg-bluebg text-white");
   };
 
   const signIn = () => {
     changeState_signin(true);
     changestate_signup(false);
-    changeColor1("bg-majblue text-white");
+    changeColor1("bg-bluebg text-white");
     changecolor2("bg-white text-black");
   };
   return (
