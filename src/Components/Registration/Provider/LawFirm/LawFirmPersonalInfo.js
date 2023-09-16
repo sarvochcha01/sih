@@ -51,13 +51,12 @@ const LawFrimPersonalinfo =(props)=>{
            <div>
                 <div>
                     <div className="h-10 w-full flex justify-center mt-2 px-8 md:px-96">
-                        <div className="h-auto w-16 md:w-14 rounded-full border-4 border-green-800 flex items-center bg-gray-300 justify-center">1</div>
+                        <div className="h-auto w-14 md:w-10 rounded-full border-4 border-blue-800 flex items-center bg-gray-300 justify-center">1</div>
                         <div className="line w-2/5 bg-gray-500 h-0.5 my-5"></div>
-                        <div className="h-auto w-16 md:w-14 rounded-full flex items-center bg-gray-300 justify-center">2</div>
+                        <div className="h-auto w-14 md:w-10 rounded-full flex items-center bg-gray-300 justify-center">2</div>
                         <div className="line w-2/5 bg-gray-500 h-0.5 my-5"></div>
-                        <div className="h-10 w-16 md:w-14 rounded-full flex items-center bg-gray-300 justify-center">3</div>
-                        <div className="line w-2/5 bg-gray-500 h-0.5 my-5"></div>
-                        <div className="h-10 w-16 md:w-14 rounded-full flex items-center bg-gray-300 justify-center">4</div>
+                        <div className="h-10 w-14 md:w-10 rounded-full flex items-center bg-gray-300 justify-center">3</div>
+                        
                     </div>
                 </div>
             <div className="container h-auto w-11/12 md:w-8/12 mx-auto mt-2 rounded-md bg-bluebg shadow-xl shadow-slate-400 p-2">

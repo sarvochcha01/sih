@@ -193,7 +193,7 @@ const ProvidersDash = () => {
 
             </div>
           </div>
-          <div className=" bg-white mt-4 md:mt-0 rounded-lg shadow-lg shadow-slate-300 md:w-96 mb-4">
+          <div className=" bg-white mt-4 md:mt-0 rounded-lg shadow-lg shadow-slate-300 md:w-96 ">
             <div className="bg-blue-800 w-full h-12 rounded-t-lg text-lg font-semibold text-gray-200 p-2 pl-4">
               Upcoming Appointments
             </div>
