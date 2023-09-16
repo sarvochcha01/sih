@@ -18,6 +18,7 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = (e) => {
+      localStorage.setItem("fullnamesignup",fullName);
     const userData = {
       fullName: fullName,
       handle: handle,
