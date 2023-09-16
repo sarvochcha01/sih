@@ -113,6 +113,7 @@ const ProvidersDash = () => {
           //setRequestData(doc.data)
           console.log(doc.data);
           localStorage.setItem("acceptedData", JSON.stringify(doc.data))
+          
 
         })
         .catch((err) => {
@@ -124,7 +125,7 @@ const ProvidersDash = () => {
     }
 
 
-  });
+  }, []);
 
 
 
@@ -151,7 +152,7 @@ const ProvidersDash = () => {
             />
             <div className="bg-white w-full flex flex-col justify-center">
               <div className=" text-2xl text-center font-bold">
-                Good Day Mr. Himanshu{" "}
+                Good Day Mr. {JSON.parse(localStorage.getItem("UserDetails")).providerInformation.providerPersonalInfo.providerFullName}{" "}
               </div>
               <div className="text-slate-700 text-center text-[15px] font-semibold">
                 Have a Nice Day !

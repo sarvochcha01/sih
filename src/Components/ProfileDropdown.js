@@ -47,7 +47,7 @@ const ProfileDropdown = (props) => {
 
           {localStorage.getItem("WhoIsHe") == "provider" && <Link to = "/providerdash" className="profile hover:bg-navbar hover:text-white hover:cursor-pointer w-4/5 h-12 flex justify-center items-center border border-navbar font-semibold rounded-xl">
             <div onClick={() => {
-              props.setProfileDropdownVisibility(false)
+              props.setProfileDropdownVisibility(false);
             }}>
             Dashboard
           </div></Link>}   
