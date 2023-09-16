@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import CalendarDateCard from "./CalendarDateCard";
 import TimeSlot from "./TimeSlot";
-import { Link } from "react-router-dom";
+import getProviderUID from "../Appointments/GetProviderUID";
+import { useNavigate } from "react-router";
 
 const Calender = (props) => {
+  
   const [calDate, setDate] = useState({});
   const [calTime, setTime] = useState({});
-
+  const navigate = useNavigate()
   const [variableName, setVariableName] = useState("");
 
   const [dateTime, setDateTime] = useState("");
@@ -14,7 +16,9 @@ const Calender = (props) => {
   useEffect(() => {
     setDateTime(
       `${calDate.year}-${calDate.month}-${calDate.day}T${calTime.hour}:${calTime.minute}:${calTime.second}.000Z`
+      
     );
+    
     setVariableName(
       `${calDate.year}-${calDate.month}-${calDate.day},${calTime.hour}:${calTime.minute}`
     );
@@ -26,25 +30,25 @@ const Calender = (props) => {
         className={`date-area ${props.dateAreaClass}   bg-white rounded-t-xl overflow-x-auto flex flex-row px-6 space-x-6 snap-x items-center border-b-2`}
       >
         <CalendarDateCard
-          date={{ day: "15", month: "6", year: "2023" }}
+          date={{ day: "15", month: "06", year: "2023" }}
           slots={6}
           setDate={setDate}
           setTime={setTime}
         />
         <CalendarDateCard
-          date={{ day: "16", month: "6", year: "2023" }}
+          date={{ day: "16", month: "06", year: "2023" }}
           slots={6}
           setDate={setDate}
           setTime={setTime}
         />
         <CalendarDateCard
-          date={{ day: "17", month: "6", year: "2023" }}
+          date={{ day: "17", month: "06", year: "2023" }}
           slots={6}
           setDate={setDate}
           setTime={setTime}
         />
         <CalendarDateCard
-          date={{ day: "18", month: "6", year: "2023" }}
+          date={{ day: "18", month: "06", year: "2023" }}
           slots={6}
           setDate={setDate}
           setTime={setTime}

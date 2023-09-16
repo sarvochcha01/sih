@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../../Authentication/apiAddress";
 import jwtDecode from "jwt-decode";
 
@@ -14,6 +14,7 @@ const Registerclient = () => {
   const [address, setAddress] = useState();
 
   const [cursorLoading, setCursorLoading] = useState(false);
+  const navigate = useNavigate()
 
   const handleFullName = (e) => {
     setFullName(e.target.value);
@@ -71,6 +72,7 @@ const Registerclient = () => {
         console.log("Successfully Uploaded");
         deleteLocalStorage();
         setCursorLoading(false);
+        navigate("/success")
         window.location.reload();
       })
       .catch((err) => {

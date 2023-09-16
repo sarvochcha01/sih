@@ -107,9 +107,8 @@ function App() {
         <Route path="/ProviderDash" element={<ProvidersDash />} />
         <Route path="/not-found" element={<NotFound404 />} />
 
-        <Route path="/request-appointment" element={<RequestAppointment/>} />
         <Route path="/success" element={<RegistrationSuccess />} />
-
+        <Route path="/request-appointment" element={<RequestAppointment />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
       <Footer />

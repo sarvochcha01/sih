@@ -2,7 +2,7 @@
     {
         "id": "a1",
         "imgUrl": "https://shorturl.at/mpyJ5",
-        "name": "Adv. Manish Suresh",
+        "name": "Manish Suresh",
         "exp": 6,
         "specialise" : "personal injury and family disputes",
         "fees": 750
@@ -10,7 +10,7 @@
     {
         "id": "a2",
         "imgUrl": "https://shorturl.at/mpyJ5",
-        "name": "Adv. Divyansh Yaduvanshi",
+        "name": "Divyansh Yaduvanshi",
         "exp": 5,
         "specialise" : "Criminal, corporate and family disputes",
         "fees": 500
@@ -18,7 +18,7 @@
     {
         "id": "a3",
         "imgUrl": "https://shorturl.at/mpyJ5",
-        "name": "Adv. Shubham Anand",
+        "name": "Shubham Anand",
         "exp": 12,
         "specialise" : "Divorce, corporate and family disputes",
         "fees": 1200
